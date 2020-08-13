@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Task Manager</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #c3d4d6;
+        }
+
+        .textSpanLineThrough {
+            text-decoration: line-through;
+        }
+
+        #taskNameInput {
+            padding: 7px;
+            border: 2px solid black;
+            width: 100%;
+        }
+
+        #createTaskButton {
+            padding: 7px;
+            border: 2px solid black;
+            width: 100%;
+            background-color: white;
+        }
+
+            #createTaskButton:hover {
+                background-color: black;
+                color: white;
+            }
+
+        #clearAllTasksButton {
+            padding: 7px;
+            border: 2px solid black;
+            width: 100%;
+            background-color: white;
+        }
+
+            #clearAllTasksButton:hover {
+                background-color: black;
+                color: white;
+            }
+
+        .taskOnClick {
+            background-color: #e8e6e6;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid" style="max-width:800px;">
+        <h1 style="padding:7px;text-align:center;">Task Manager</h1>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <input id="taskNameInput" onclick="enterKeyCreateTask()" type="text" placeholder="Your task..." />
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-lg-6">
+                <button class="my-1" id="createTaskButton" style="cursor:pointer;text-align:center;" onclick="newTask()">Create task</button>
+            </div>
+
+            <div class="col-lg-6">
+                <button class="my-1" id="clearAllTasksButton" style="cursor:pointer;text-align:center;" onclick="clearAllTasks()">Clear all tasks</button>
+            </div>
+        </div>
+
+        <br /> <br />
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div style="border-radius:;border:2px solid black;overflow-y:auto;height:450px;background-color:white;" id="taskContainer"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        function editText() {
+            var textarea = document.createElement("textarea");
+            var thetext = document.getElementById("text");
+            textarea.value = thetext.innerHTML;
+            document.getElementById("container").appendChild(textarea);
+        }
+
+        function enterKeyCreateTask() {
+            // Get the input field
+            var input = document.getElementById("taskNameInput");
+
+            // Execute a function when the user releases a key on the keyboard
+            input.addEventListener("keyup", function (event) {
+                // Number 13 is the "Enter" key on the keyboard
+                if (event.keyCode === 13) {
+                    // Cancel the default action, if needed
+                    event.preventDefault();
+                    // Trigger the button element with a click
+                    document.getElementById("createTaskButton").click();
+                }
+            });
+        }
+
+        function clearAllTasks() {
+            document.getElementById("taskContainer").innerHTML = "";
+        }
+
+        function newTask() {
+
+            var taskNameInput = document.getElementById("taskNameInput");
+
+            if (taskNameInput.value.trim().length) {
+
+                var checkBox = document.createElement("div");
+                checkBox.style.minHeight = "20px";
+                checkBox.style.minWidth = "20px";
+                checkBox.style.display = "inline-block";
+                checkBox.style.border = "1px solid black";
+                checkBox.style.cursor = "pointer";
+                checkBox.style.marginRight = "15px";
+
+                var checkMarkImg = document.createElement("img");
+                checkMarkImg.setAttribute("src", "checkmarkBlack.png");
+                checkMarkImg.style.height = "20px";
+                checkMarkImg.style.width = "18px";
+                checkMarkImg.style.display = "none";
+                checkMarkImg.style.objectFit = "contain";
+
+                checkBox.appendChild(checkMarkImg);
+
+                var textSpan = document.createElement("span");
+                textSpan.innerHTML = taskNameInput.value;
+                textSpan.style.color = "black";
+                textSpan.style.padding = "10px";
+
+                var deleteButton = document.createElement("span");
+                deleteButton.innerHTML = '<i class="fa fa-times"></i>';
+                deleteButton.style.color = "white";
+                deleteButton.style.border = "1px solid black";
+                deleteButton.style.backgroundColor = "#de181c";
+                deleteButton.style.textAlign = "center";
+                deleteButton.style.minWidth = "40px";
+                deleteButton.style.float = "right";
+                deleteButton.style.cursor = "pointer";
+                deleteButton.onclick = function () {
+                    deleteButton.parentElement.remove();
+                    document.getElementById("taskContainer").removeChild(hr);
+                }
+
+                $(document).ready(function () {
+                    $(deleteButton).hover(function () {
+                        $(this).css("background-color", "#ff0004");
+                    }, function () {
+                        $(this).css("background-color", "#de181c");
+                    });
+                });
+
+                var div = document.createElement("div");
+                //div.style.backgroundColor = "pink";
+                div.style.padding = "0px";
+                div.style.margin = "0px";
+                div.style.display = "flex";
+                div.style.alignItems = "center";
+                div.style.justifyContent = "space-between";
+                div.style.paddingLeft = "10px";
+                div.style.paddingRight = "10px";
+                div.style.paddingTop = "0px";
+                div.style.paddingBottom = "0px";
+                div.style.cursor = "pointer";
+                div.style.wordWrap = "break-word";
+                div.style.wordBreak = "break-word";
+
+                div.appendChild(checkBox);
+                div.appendChild(textSpan);
+                div.appendChild(deleteButton);
+
+                var hr = document.createElement("hr");
+                hr.style.margin = "0px";
+                hr.style.backgroundColor = "black";
+
+                var lineBreak = document.createElement("br");
+
+                div.onclick = function () {
+                    if (checkMarkImg.style.display === "none") {
+                        checkMarkImg.style.display = "block";
+                    } else {
+                        checkMarkImg.style.display = "none";
+                    }
+                    textSpan.classList.toggle("textSpanLineThrough");
+                    div.classList.toggle("taskOnClick");
+                }
+
+                document.getElementById("taskContainer").appendChild(div);
+                document.getElementById("taskContainer").appendChild(hr);
+
+                taskNameInput.value = "";
+
+            } /*else {
+                            alert("Please enter a task");
+                        }*/
+        }
+
+
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
