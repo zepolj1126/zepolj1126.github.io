@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="Ennscribe Files/EnnscribeQuill.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Ennscribe Home</title>
+  </head>
+<style>
+body {
+  font-family: arial;
+  background-color: #ffffff;
+  min-width: 250px;
+}
+
+.navbar {
+  box-shadow: 0 1px 5px rgba(0,0,0,.18);
+  background-color: rgba(242, 154, 41, .97);
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  body {
+    margin-top: 50px;
+  }
+  .navbar {
+    position: static;
+    right: 0;
+    left: 0;
+    border-radius: 0;
+    top: 0;
+  }
+}
+
+.dropdown-menu a:hover {
+  background-color: #f29a29;
+  color:#FFF;
+}
+
+.navbar-brand img:hover {
+  cursor: pointer;
+}
+
+.dropdown-menu a:active {
+  color: #f2f4f7;
+}
+
+.dropdown-item {
+  color:black;
+}
+
+.nav-link {
+  color:#FFF;
+}
+
+.nav-link:hover {
+  color:black;
+}
+
+.fa-bars {
+  color:#f29a29;
+}
+
+.fa-times {
+  color:#f29a29;
+}
+
+#spanbtn:hover {
+  background-color: #f04848;
+  cursor: pointer;
+}
+
+#spanbtn {
+  background-color: #f29a29;
+}
+
+.containerss {
+  display: inline-block;
+  position: relative;
+  width:;
+  text-align: center;
+}
+
+.backupbtn {
+  top: 85%;
+  left: 10%;
+  transform: translate(0%, -50%);
+  position: fixed;
+  bottom: 10px;
+  z-index: 1;
+  transition: all 1s;
+  height:auto;
+}
+
+#barsbtn:active,
+#barsbtn:focus,
+#barsbtn:focus:active {
+  box-shadow: none;
+  outline:0;
+  background-image: none;
+}
+
+.parent {
+  text-align: left;
+}
+
+.parent > ul {
+  display: inline-block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#backupbtn:active,
+#backupbtn:focus,
+#backupbtn:focus:active {
+  box-shadow: none;
+  outline:0;
+  background-image: none;
+}
+
+.hide {
+  opacity: 0;
+  left: -100%;
+}
+
+.show {
+  opacity: 1;
+  left: 0;
+}
+
+#imgbtn {
+  border-radius: 5px;
+  background-color: #bd1735;
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+}
+
+#imgbtn:hover {
+  background-color: #e62548;
+}
+
+#div {
+  background-image: url("Ennscribe Files/darknotepad.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (max-width: 750px) {
+  #div {
+    background-image: none;
+    background-color: #569699;
+    position: relative;
+    animation-name: divcolors;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes divcolors {
+    0%   {background-color:#569699;} /*dark green*/
+    25%  {background-color:#ED7B55;} /*dark orange*/
+    50%  {background-color:#567599;} /*dark blue*/
+    75%  {background-color:#ed557b;} /*dark red*/
+    100% {background-color:#569699;} /*dark green*/
+  }
+}
+
+
+</style>
+  <body>
+
+  <!--
+  <div class="container" style="background-color:black;">
+    <a href="ennscribehome.html"><img id="toplogo" class="img-fluid mx-auto" src="Ennscribe Files/EnnscribeLogo.jpg" alt="logo" style="max-width:100%;display:block;"></a>
+  </div>
+
+  <br>
+  -->
+
+  <div style="text-align:center">
+    <a href="ennscribehome.html"><img id="toplogo" class="img-fluid mx-auto" src="Ennscribe Files/EnnscribeLogo.jpg" style="max-width:100%;"></a>
+  </div>
+
+  <br>
+
+  <div class=''>
+    <div class="inner-container">
+      <h4 align="center" style="color:#f29a29;" class="">Communication <small>•</small> Technical Writing <small>•</small> Copywriting</h4>
+    </div>
+  </div>
+
+  <br>
+
+<nav class="navbar shadow sticky-top navbar-expand-lg">
+
+  <a class="navbar-brand" href="ennscribehome.html">
+    <img src="Ennscribe Files/EnnscribeQuill.jpg" alt="logo" style="width:40px;">
+  </a>
+
+  <button id="barsbtn" class="navbar-toggler fas fa-bars" onclick="myFunction(this)" type="button" data-toggle="collapse" style="background-color:#FFF;min-width:50px;" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Samples
+        </a>
+        <div class="dropdown-menu" style="background-color: #FFF;">
+          <a class="dropdown-item" href="ennscribetwsamples.html">Technical Writing Samples</a>
+          <a class="dropdown-item" href="ennscribecwsamples.html">Copywriting Samples</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="ennscribeabout.html">About</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="ennscribecontact.html">Contact</a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>
+
+<div id="div" class="container-fluid mh-100">
+  <br><br><br>
+  <div style="text-align:center;"><img class='' src='Ennscribe Files/lightbulbmoment.png' style=""></img></div>
+  <br>
+  <p id="" class="" style="font-size:75px;color:white;" align="center"><b>Tell Your Story</b></p>
+  <p id="" class="" style="font-size:22px;color:white;" align="center"><b>Harness the power of writing that sells, informs, and motivates.</b></p>
+  <br>
+  <div style="text-align:center">
+  <a href="ennscribecontact.html"><span id="spanbtn" class="badge" style="border-radius:50px;padding:15px;color:#FFF;"><b>LET'S WORK TOGETHER</b></span></a>
+  </div>
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+  <br>
+</div>
+
+
+<a href="#toplogo"><button id="backupbtn" style="background-color:#f29a29;color:#ffffff;" class="backupbtn hide" style="z-index:1;position:fixed;background-color:#7a7a7a;color:#ffffff;"><i class="fas fa-long-arrow-alt-up"></i></button></a>
+
+<!--
+<a href="#toplogo"><span id="backupbtn" style="background-color:#f29a29;color:#ffffff;" class="backupbtn hide" style="z-index:1;position:fixed;background-color:#7a7a7a;color:#ffffff;"><br><i class="fas fa-long-arrow-alt-up"></i></span></a>
+-->
+
+<div class="container-fluid px-5 py-5" style="background-color:#ffffff;">
+  <div class="row">
+
+    <div class="col-lg-8 px-5 py-5">
+
+      <h1 style="color:#f29a29;"><b>We transform your vision into creative results</b></h1>
+      <br>
+      <h5 style="color:#7a7a7a;">Carefully crafted business communications have the power to promote your image,
+         market your services, or instruct others on how to use your products.</h5>
+      <br>
+      <h5 style="color:#7a7a7a;">We focus your message and tell others your story in a compelling way.</h5>
+
+    </div>
+
+    <div class="col-lg-4 px-5 py-5">
+      <img class="img-fluid" src="Ennscribe Files/crafting-ideas.jpg">
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="container-fluid px-5 py-5" style="background-color:#fef5e9;">
+  <div class="row">
+
+    <div class="col-sm-4 px-5 py-5">
+      <img id="compass" class="img-fluid" style="background-color:#ffffff;" src="Ennscribe Files/compassicon2.png">
+    </div>
+
+    <div class="col-lg-8 px-5 py-5">
+
+      <h1 style="color:#f29a29;"><b>Reader Advocates</b></h1>
+      <br>
+      <h5 style="color:#7a7a7a;">Busy people don’t read, they scan. If they lose interest in your content or can’t find relevant information,
+         they’ll quickly go elsewhere. We break down the walls of words and
+          create well-structured information that is easy to find and understand.
+      </h5>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="container-fluid px-5 py-5" style="background-color:#ffffff;">
+  <div class="row">
+
+    <div class="col-lg-8 px-5 py-5">
+
+      <h1 style="color:#f29a29;"><b>Audience Experts</b></h1>
+      <br>
+      <h5 style="color:#7a7a7a;">We research your audience carefully and craft content directly for them.
+         We think about questions or needs your readers have and then give them that information in concise
+         and clear content. Our content connects your readers with how your business helps solve their business
+         or personal needs.</h5>
+
+    </div>
+
+    <div class="col-sm-4 px-5 py-5">
+      <img class="img-fluid" src="Ennscribe Files/people2.png" style="background-color:#fef5e9;">
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="container-fluid px-5 py-5" style="background-color:#fef5e9;">
+  <div class="row">
+
+    <div class="col-sm-4 px-5 py-5">
+      <img id="compass" class="img-fluid" style="background-color:#ffffff;" src="Ennscribe Files/star2.png">
+    </div>
+
+    <div class="col-lg-8 px-5 py-5">
+
+      <h1 style="color:#f29a29;"><b>Credibility Creators</b></h1>
+      <br>
+      <h5 style="color:#7a7a7a;">Clear, well-written content establishes your professional credibility, earns trust, and boosts sales.
+         We learn everything we can about your products and services and then translate that into content that helps
+         readers feel confident and comfortable with you.</h5>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="container-fluid px-5 py-5" style="background-color:#ffffff;">
+  <div class="row">
+
+    <div class="col-lg-8 px-5 py-5">
+
+      <h1 style="color:#f29a29;"><b>Global English Specialists</b></h1>
+      <br>
+      <h5 style="color:#7a7a7a;">We specialize in creating content optimized for a global audience.
+         Simple sentence structure and specific word choices make the content easier for non-native
+         English speakers to understand. Our content is translation ready, without unnecessary complexities
+         that increase translation costs or cause mistranslations.</h5>
+
+    </div>
+
+    <div class="col-sm-4 px-5 py-5">
+      <img class="img-fluid" src="Ennscribe Files/WorldIcon3.png" style="background-color:#fef5e9;">
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="container-fluid px-5 py-5" style="background-color:#569699;color:white;">
+
+  <div class="row">
+      <div class="col">
+          <span style="text-align:center;"><h1><b>Services</b></h1></span>
+      </div>
+  </div>
+
+  <br>
+
+  <hr>
+
+  <div class="row">
+
+      <div class="col py-4" style="text-align:left;">
+          <h2>Technical Communications</h2>
+          <br>
+          <h5>Our technical communication services create an information experience for your readers with engaging content that clearly explains how to use your products.
+             Our user assistance materials can dramatically decrease your support costs because we create content that is genuinely helpful.
+          </h5>
+          <br>
+          <h5>Here’s a sample of our offerings:</h5>
+          <br>
+          <ul>
+            <li><h5>Online Help</b></h5></li>
+            <li><h5>User Guides</b></h5></li>
+            <li><h5>Video Scripts and Tutorials</b></h5></li>
+            <li><h5>Software Interface Text</b></h5></li>
+            <li><h5>Release Notes</b></h5></li>
+            <li><h5>Documentation Migration</b></h5></li>
+          </ul>
+      </div>
+
+  </div>
+
+  <hr>
+
+  <div class="row">
+
+    <div class="col py-4" style="text-align:left;">
+      <h2>Copywriting</h2>
+      <br>
+      <h5>Our copywriting covers the spectrum of marketing and communications. Here’s a sample of our offerings,
+      but we’re always on call to prepare tailor-made products:
+      </h5>
+      <br>
+      <ul>
+        <li><h5>Website Copy</h5></li>
+        <li><h5>Newsletters</h5></li>
+        <li><h5>Blog Posts</h5></li>
+        <li><h5>E-books</h5></li>
+        <li><h5>Press Releases</h5></li>
+        <li><h5>Brochures</h5></li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="container-fluid px-5 py-5" style="background-color:#ed7b55;color:white;">
+
+  <div class="row">
+      <div class="col">
+          <span style="text-align:center;"><h1><b>How We Work</b></h1></span>
+      </div>
+  </div>
+
+  <br>
+
+  <hr>
+
+  <div class="row">
+
+      <div class="col-lg-3 py-4 px-5 d-none d-lg-block" style="text-align:left;">
+          <img class="img-fluid" src="Ennscribe Files/dollar2.png" style="background-color:#fef5e9;">
+      </div>
+
+      <div class="col-lg-9 py-4 px-5" style="text-align:left;">
+        <h2>Pricing</h2>
+        <br>
+        <h5>Smaller projects are sensibly priced by the piece.
+           Ongoing projects are billed at an hourly rate.
+        </h5>
+        <br>
+        <button onclick="location.href='ennscribecontact.html';" class="btn btn-danger"><b>Contact us for a quote!</b></button>
+      </div>
+
+  </div>
+
+  <hr>
+
+  <div class="row">
+
+    <div class="col-lg-3 py-4 px-5 d-none d-lg-block" style="text-align:left;">
+        <img class="img-fluid" src="Ennscribe Files/wrench2.png" style="background-color:#fef5e9;">
+    </div>
+
+    <div class="col-lg-9 py-4 px-5" style="text-align:left;">
+      <h2>Process</h2>
+      <br>
+      <h5>Count on us to research all aspects of your business so that your content has substance behind the message you want to convey. We then create a thorough outline that details all key areas to be covered and flags potential questions or challenges. You’ll review and approve the outline so there’ll be no surprises.
+         We’ll write the first draft and submit it for your review. After a revision process,
+         we’ll deliver the final content to you.
+      </h5>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="row">
+
+    <div class="col-lg-3 py-4 px-5 d-none d-lg-block" style="text-align:left;">
+        <img class="img-fluid" src="Ennscribe Files/clock2.png" style="background-color:#fef5e9;">
+    </div>
+
+    <div class="col-lg-9 py-4 px-5" style="text-align:left;">
+        <h2>Availability</h2>
+        <br>
+        <h5>We’re available for short- and long-term projects.</h5>
+        <br>
+        <button onclick="location.href='ennscribecontact.html';" class="btn btn-danger"><b>Contact us to get started!</b></button>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="container-fluid px-5 py-5" style="background-color:#ed7b55;color:white;">
+
+  <div class="row">
+      <div class="col">
+          <span style="text-align:center;"><h1><b>How We Work</b></h1></span>
+      </div>
+  </div>
+
+  <br>
+
+  <hr>
+
+  <div class="row">
+
+      <div class="col py-4" style="text-align:left;">
+          <h2><b>Pricing</b></h2>
+          <br>
+          <h5><b>Smaller projects are sensibly priced by the piece.
+             Ongoing projects are billed at an hourly rate.</b>
+          </h5>
+          <br>
+          <button onclick="location.href='ennscribecontact.html';" class="btn btn-danger"><b>Contact us for a quote!</b></button>
+      </div>
+
+  </div>
+
+  <hr>
+
+  <div class="row">
+
+    <div class="col py-4" style="text-align:left;">
+        <h2><b>Process</b></h2>
+        <br>
+        <h5><b>Count on us to research all aspects of your business so that your content has substance behind the message you want to convey. We then create a thorough outline that details all key areas to be covered and flags potential questions or challenges. You’ll review and approve the outline so there’ll be no surprises.
+           We’ll write the first draft and submit it for your review. After a revision process,
+           we’ll deliver the final content to you.</b>
+        </h5>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="row">
+
+    <div class="col py-4" style="text-align:left;">
+        <h2><b>Availability</b></h2>
+        <br>
+        <h5><b>We’re available for short- and long-term projects.</b></h5>
+        <br>
+        <button onclick="location.href='ennscribecontact.html';" class="btn btn-danger"><b>Contact us to get started!</b></button>
+    </div>
+
+  </div>
+
+</div>
+-->
+
+
+
+<div class="container-fluid px-5 py-5" style="background-color:#ffffff;">
+
+  <div class="row">
+    <div class="col-lg-12 px-5 py-5" style="text-align:center;">
+
+      <h1 style="color:#f29a29;"><b>What Our Clients Say</b></h1>
+      <br><br>
+      <h5>"Jeni has written several internet-directed press releases for our clients, meeting our department standards for each one.
+         Her work is always well-written, well-targeted, and produced on time."</h5>
+      <br>
+      <p style="font-size:17px;"><b>Tristan R.</b> <br> <font size="2">Xeal Precision Marketing</font></p>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+
+    <div class="col-lg-12 px-5 py-5" style="text-align:center;">
+      <h1 style="color:#f29a29;"><b>Our Clients Include</b></h1>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-lg-6 " style="text-align:center;">
+      <img class="img-fluid" src="Ennscribe Files/forestofpeace.png">
+    </div>
+
+    <div class="col-lg-6 " style="text-align:center;">
+      <img class="img-fluid" src="Ennscribe Files/netfirms.jpg">
+    </div>
+
+  </div>
+
+</div>
+
+
+  <footer class="container-fluid py-3" style="background-color:#f29a29;">
+      <div class="row">
+
+        <div class="col-lg-6 py-1" style="font-size:12px;text-align:center;">
+            <i class="fas fa-map-marker-alt" style="color:#ffffff;"></i> <span style="color:#ffffff;">Ennscribe, LLC, Tulsa, Oklahoma, USA</span>
+        </div>
+
+
+
+        <div class="col-lg-6 py-1" style="font-size:12px;text-align:center;">
+            <a href="ennscribehome.html" style="color:white;">Home</a>&emsp;
+            <a href="ennscribetwsamples.html" style="color:white;">Samples</a>&emsp;
+            <a href="ennscribeabout.html" style="color:white;">About</a>&emsp;
+            <a href="ennscribecontact.html" style="color:white;">Contact</a>&emsp;
+        </div>
+
+      </div>
+  </footer>
+
+
+<script>
+
+function myFunction(x) {
+  x.classList.toggle("fa-times");
+}
+
+
+myID = document.getElementById("backupbtn");
+
+var myScrollFunc = function() {
+  var y = window.scrollY;
+  if (y >= 600) {
+    myID.className = "backupbtn show"
+  } else {
+    myID.className = "backupbtn hide"
+  }
+};
+
+window.addEventListener("scroll", myScrollFunc);
+
+</script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
