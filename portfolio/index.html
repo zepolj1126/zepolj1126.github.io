@@ -322,7 +322,7 @@
         <div class="row p-1">
 
             <div class="col-lg-3 mb-5">
-                <div id="imageContainerId" class="imageContainer" ontouchstart="saulfencing(this)">
+                <div id="imageContainerId" class="imageContainer" ontouchstart="saulfencing()">
                     <img id="saulfencingPic" src="latestlogo3.png" class="image" style="background-color:white;object-fit:contain;">
                     <div id="saulfencingoverlay" class="overlay">
                         <h4>
@@ -555,15 +555,15 @@
                     $('.overlay').css('opacity', '0');
                 }*/
 
-            if (this.classList.contains("overlay")) {
+            if (saulfencingoverlay.classList.contains("overlay")) {
 
-                this.classList.remove("overlay");
-                this.classList.add("overlay2");
+                saulfencingoverlay.classList.remove("overlay");
+                saulfencingoverlay.classList.add("overlay2");
 
                 } else {
 
-                this.classList.remove("overlay2");
-                this.classList.add("overlay");
+                saulfencingoverlay.classList.remove("overlay2");
+                saulfencingoverlay.classList.add("overlay");
 
                 }
 
