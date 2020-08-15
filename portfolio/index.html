@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -108,20 +108,28 @@
             overflow-y: auto;
             opacity: 0;
         }
-        
+
+        .overlay2 {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #1f375c;
+            position: absolute;
+            color: white;
+            padding: 20px;
+            transition: .5s ease;
+            border-radius:;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            opacity: 1;
+        }
 
         .imageContainer:hover > .overlay {
             opacity: 1;
         }
-        
-        @media(hover: hover) and (pointer: fine) {
-    .imageContainer:hover > .overlay {
-            opacity: 1;
-        }
-}
-        
-        
-          
+
         @media only screen and (max-width: 1000px) {
             .navbar {
                 position: static;
@@ -314,9 +322,9 @@
         <div class="row p-1">
 
             <div class="col-lg-3 mb-5">
-                <div class="imageContainer">
+                <div id="imageContainerId" class="imageContainer" onclick="saulfencing()">
                     <img id="saulfencingPic" src="latestlogo3.png" class="image" style="background-color:white;object-fit:contain;">
-                    <div class="overlay">
+                    <div id="saulfencingoverlay" class="overlay">
                         <h4>
                             saulfencing.com
                         </h4>
@@ -334,9 +342,9 @@
             </div>
 
             <div class="col-lg-3 mb-5">
-                <div class="imageContainer">
+                <div class="imageContainer" onclick="ennscribe()">
                     <img id="ennscribePic" src="EnnscribeQuill.jpg" class="image" style="background-color:white;object-fit:contain;">
-                    <div class="overlay">
+                    <div id="ennscribeoverlay" class="overlay">
                         <h4>
                             ennscribe.com
                         </h4>
@@ -354,9 +362,9 @@
             </div>
 
             <div class="col-lg-3 mb-5">
-                <div class="imageContainer">
+                <div class="imageContainer" onclick="hotelsite()">
                     <img id="hotelPic" src="exterior.jpg" class="image" style="object-fit:cover;">
-                    <div class="overlay">
+                    <div id="hotelsiteoverlay" class="overlay">
                         <h4>
                             Hotel website (clone)
                         </h4>
@@ -372,9 +380,9 @@
             </div>
 
             <div class="col-lg-3 mb-5">
-                <div class="imageContainer">
+                <div class="imageContainer" onclick="taskmanager()">
                     <img id="checkmarkPic" src="checkmarkBlack.png" class="image" style="background-color:white;object-fit:contain;">
-                    <div class="overlay">
+                    <div id="taskmanageroverlay" class="overlay">
                         <h4>
                             Task Manager app
                         </h4>
@@ -532,6 +540,127 @@
 
             overlay2.style.opacity = "0";
         }*/
+
+        function saulfencing() {
+
+            var imageContainerId = document.getElementById("imageContainerId");
+            var saulfencingoverlay = document.getElementById("saulfencingoverlay");
+
+            //imageContainerId.addEventListener("click", function () {
+
+                /*if ($('.overlay').css('opacity', '0')) {
+
+                    $('.overlay').css('opacity', '1');
+                } else {
+                    $('.overlay').css('opacity', '0');
+                }*/
+
+            if (saulfencingoverlay.classList.contains("overlay")) {
+
+                saulfencingoverlay.classList.remove("overlay");
+                saulfencingoverlay.classList.add("overlay2");
+
+                } else {
+
+                saulfencingoverlay.classList.remove("overlay2");
+                saulfencingoverlay.classList.add("overlay");
+
+                }
+
+            //});
+
+        }
+
+        function ennscribe() {
+
+            var imageContainerId = document.getElementById("imageContainerId");
+            var ennscribeoverlay = document.getElementById("ennscribeoverlay");
+
+            //imageContainerId.addEventListener("click", function () {
+
+            /*if ($('.overlay').css('opacity', '0')) {
+
+                $('.overlay').css('opacity', '1');
+            } else {
+                $('.overlay').css('opacity', '0');
+            }*/
+
+            if (ennscribeoverlay.classList.contains("overlay")) {
+
+                ennscribeoverlay.classList.remove("overlay");
+                ennscribeoverlay.classList.add("overlay2");
+
+            } else {
+
+                ennscribeoverlay.classList.remove("overlay2");
+                ennscribeoverlay.classList.add("overlay");
+
+            }
+
+            //});
+
+        }
+
+        function hotelsite() {
+
+            var imageContainerId = document.getElementById("imageContainerId");
+            var hotelsiteoverlay = document.getElementById("hotelsiteoverlay");
+
+            //imageContainerId.addEventListener("click", function () {
+
+            /*if ($('.overlay').css('opacity', '0')) {
+
+                $('.overlay').css('opacity', '1');
+            } else {
+                $('.overlay').css('opacity', '0');
+            }*/
+
+            if (hotelsiteoverlay.classList.contains("overlay")) {
+
+                hotelsiteoverlay.classList.remove("overlay");
+                hotelsiteoverlay.classList.add("overlay2");
+
+            } else {
+
+                hotelsiteoverlay.classList.remove("overlay2");
+                hotelsiteoverlay.classList.add("overlay");
+
+            }
+
+            //});
+
+        }
+
+        function taskmanager() {
+
+            var imageContainerId = document.getElementById("imageContainerId");
+            var taskmanageroverlay = document.getElementById("taskmanageroverlay");
+
+            //imageContainerId.addEventListener("click", function () {
+
+            /*if ($('.overlay').css('opacity', '0')) {
+
+                $('.overlay').css('opacity', '1');
+            } else {
+                $('.overlay').css('opacity', '0');
+            }*/
+
+            if (taskmanageroverlay.classList.contains("overlay")) {
+
+                taskmanageroverlay.classList.remove("overlay");
+                taskmanageroverlay.classList.add("overlay2");
+
+            } else {
+
+                taskmanageroverlay.classList.remove("overlay2");
+                taskmanageroverlay.classList.add("overlay");
+
+            }
+
+            //});
+
+        }
+
     </script>
 
     <!-- Optional JavaScript -->
