@@ -1430,8 +1430,9 @@
          $("#asdf").slideUp();
      }
     });
-
-    $(document).on("touchstart", function (event) {
+    
+    /* Slides up phone icon dropdown content when user touches outside of it */
+    $(document).on("touchend", function (event) {
         var $trigger = $("#phonedrpdwn");
         if ($trigger !== event.target && !$trigger.has(event.target).length) {
             $("#asdf").slideUp();
