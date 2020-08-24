@@ -1429,7 +1429,14 @@
      if($trigger !== event.target && !$trigger.has(event.target).length){
          $("#asdf").slideUp();
      }
-     });
+    });
+
+    $(document).on("touchstart", function (event) {
+        var $trigger = $("#phonedrpdwn");
+        if ($trigger !== event.target && !$trigger.has(event.target).length) {
+            $("#asdf").slideUp();
+        }
+    });
 
 
   /* Calculates number of nights between two dates *///////////////////////////////////////////
