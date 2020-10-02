@@ -1,754 +1,295 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="">
+    <link href="//db.onlinewebfonts.com/c/8e3ad27b0ffe0ef0484c6bf6a3eb9b16?family=Clarendon+LT+Std" rel="stylesheet" type="text/css" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- FontAwesome -->
-    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- jQuery -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- Devicons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
-
-    <title>Joshua Lopez</title>
+    <title>Portfolio Experiment</title>
 
     <style>
         body {
-            background-color: #F5F5F5;
-        }
-        .shadow {
-            box-shadow: 0 1px 5px rgba(0,0,0,.18);
-        }
-
-        #landingDIV {
-            position: relative;
-            background-color: #1f375c;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #landingText {
-            color: white;
-            /*border: 1px solid white;*/
-            padding: 40px;
-        }
-
-        .fa-bars {
-            color: #1f375c;
+            background-color: darkgrey;
         }
 
         .nav-link {
-            color: white;
+            font-size: 18px;
         }
 
-            .nav-link:hover {
-                color: #dce0e6;
+        .card-img-top {
+            width: 100%;
+            height: 15vw;
+            object-fit: contain;
+        }
+
+        .carousel-item {
+            width: 100%; /*width you want*/
+            height: 500px; /*height you want*/
+            overflow: hidden;
+        }
+
+            .carousel-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
             }
 
         .card {
-            margin: 0 auto; /* Added */
-            float: none; /* Added */
-            margin-bottom: 10px; /* Added */
+            max-height: 490px;
         }
 
-        #aboutContent {
-            padding: 5px;
-            /*display: flex;
-            justify-content: center;
-            align-items: center;*/
-        }
-
-        #resumeContent {
-            padding: 5px;
-            display: inline-block;
-            /*display: flex;
-            justify-content: center;
-            align-items: center;*/
-        }
-
-        #contactContent {
-            padding: 5px;
-            display: inline-block;
-            /*display: flex;
-            justify-content: center;
-            align-items: center;*/
-        }
-
-
-
-
-
-        .imageContainer {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-            .imageContainer > .image {
-                width: 100%;
-                height: 100%;
-                border-radius:;
-                object-fit:;
-            }
-
-        .overlay {
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #1f375c;
-            position: absolute;
-            color: white;
-            padding: 20px;
-            transition: .5s ease;
-            border-radius:;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-            opacity: 0;
-        }
-
-        .overlay2 {
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #1f375c;
-            position: absolute;
-            color: white;
-            padding: 20px;
-            transition: .5s ease;
-            border-radius:;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-            opacity: 1;
-        }
-
-        .imageContainer:hover > .overlay {
-            opacity: 1;
+        .card-body {
+            overflow: auto;
         }
 
         @media only screen and (max-width: 1000px) {
             .navbar {
                 position: static;
             }
-
-            #saulfencingPic {
-                height: 400px;
-            }
-
-            #ennscribePic {
-                height: 400px;
-            }
-
-            #hotelPic {
-                height: 400px;
-            }
-
-            #checkmarkPic {
-                height: 400px;
-                object-fit: contain;
-            }
         }
-
-
-
-        /*
-        #imageContainer2 {
-            width: 100%;
-            height: auto;
-            position: relative;
-        }
-
-        #image2 {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 10px;
-        }
-
-        #overlay2 {
-            opacity: 0;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #008CBA;
-            position: absolute;
-            color: white;
-            padding: 20px;
-            transition: .5s ease;
-            border-radius: 10px;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-        }
-        */
-
-        /*
-        .img-wrap {
-            width: 600px;
-            height: auto;
-            position: relative;
-        }
-
-            .img-wrap > img {
-                width: 100%;
-                height: auto;
-            }
-
-        .overlay1 {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0,0,0,0.5);
-            display: none;
-        }
-
-        .img-wrap:hover > .overlay1 {
-            display: inline-block;
-        }
-        */
 
     </style>
+
 </head>
-<body>
-
-    <!--
-    <div class="img-wrap">
-        <div class="overlay1"></div>
-        <img src="EnnscribeLogoWeb.jpg">
-    </div>
-    <div class="img-wrap">
-        <div class="overlay1"></div>
-        <img src="EnnscribeLogoWeb.jpg">
-    </div>
 
-
-    <div class="imageContainer">
-        <img src="EnnscribeLogoWeb.jpg" class=" image" />
-        <div class="overlay">
-            <h4>
-                ennscribe.com
-            </h4>
-            <p>
-                This is a mostly static website I made for my friend who's a technical/copy writer.
-                This site advertises and showcases her work. It also contains a contact page (made with PHP) where you can send her a message, which goes
-                straight to her email.
-            </p>
-            <p>
-                <b>Technologies:</b> HTML, CSS, Bootstrap, PHP
-            </p>
-            <button class="btn btn-danger">See website</button>
-        </div>
-    </div>
-
-
-    <div id="imageContainer2" onmouseover="showOverlay2()" onmouseout="hideOverlay2()">
-        <img src="EnnscribeLogoWeb.jpg" id="image2" class="">
-        <div id="overlay2">
-            <h4>
-                ennscribe.com
-            </h4>
-            <p>
-                This is a mostly static website I made for my friend who's a technical/copy writer.
-                This site advertises and showcases her work. It also contains a contact page (made with PHP) where you can send her a message, which goes
-                straight to her email.
-            </p>
-            <p>
-                <b>Technologies:</b> HTML, CSS, Bootstrap, PHP
-            </p>
-            <button class="btn btn-danger">See website</button>
-        </div>
-    </div>
-    -->
-
-
-    <nav class="navbar sticky-top navbar-expand-lg" style="background-color:rgba(31, 55, 92, .95);">
-
-        <span></span>
-
-        <button class="navbar-toggler fas fa-bars" style="background-color:#FFF;min-width:50px;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#portfolio">Portfolio</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About Me</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#resume">Resume</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-
-            </ul>
-        </div>
-
-    </nav>
-
-
-
-    <div id="" class="container-fluid" style="padding:80px;background-color:#FFFFFF;">
-        
-        <h1 style="text-align:center;color:#575757;">Joshua Lopez</h1>
-
-        <hr style="background-color:#575757;" />
-
-        <h4 style="text-align:center;color:#212529;">Front-End Developer</h4>
-
-        <br />
-
-        <p style="font-style:italic;text-align:center;color:#212529;font-size:20px;">Hard-working and detail-oriented web developer seeking to work and expand my knowledge in programming and web development.</p>
-        
-    </div>
-
-
-
-    <div id="portfolio" class="container-fluid" style="background-color:;">
-
-        <br />
-
-        <h1 style="text-align:center;color:#575757;">Portfolio</h1>
-
-        <br />
-
-        <div class="row p-1 justify-content-center">
-
-            
-            <div class="col-lg-3 mb-5">
-                <div id="imageContainerId" class="imageContainer" onclick="saulfencing()">
-                    <img id="saulfencingPic" src="latestlogo3.png" class="image" style="background-color:white;object-fit:contain;">
-                    <div id="saulfencingoverlay" class="overlay">
-                        <h4>
-                            saulfencing.com
-                        </h4>
-                        <p>
-                            This is a mostly static website I made for my friend who runs a construction business.
-                            This site advertises and showcases his work. It also contains a contact page (made with PHP) where you can send him a message, which goes
-                            straight to his email.
-                        </p>
-                        <p>
-                            <b>Technologies:</b> HTML, CSS, Bootstrap, PHP
-                        </p>
-                        <a href="https://saulfencing.com"><button class="btn btn-danger">See website</button></a>
-                    </div>
-                </div>
-            </div>
-            
-
-            <div class="col-lg-3 mb-5">
-                <div class="imageContainer" onclick="ennscribe()">
-                    <img id="ennscribePic" src="EnnscribeQuill.jpg" class="image" style="background-color:white;object-fit:contain;">
-                    <div id="ennscribeoverlay" class="overlay">
-                        <h4>
-                            ennscribe.com
-                        </h4>
-                        <p>
-                            This is a mostly static website I made for my friend who's a copy/technical writer.
-                            This site advertises and showcases her work. It also contains a contact page (made with PHP) where you can send her a message, which goes
-                            straight to her email.
-                        </p>
-                        <p>
-                            <b>Technologies:</b> HTML, CSS, Bootstrap, PHP
-                        </p>
-                        <a href="https://zepolj1126.github.io/ennscribe"><button class="btn btn-danger">See website</button></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-5">
-                <div class="imageContainer" onclick="hotelsite()">
-                    <img id="hotelPic" src="exterior.jpg" class="image" style="object-fit:cover;">
-                    <div id="hotelsiteoverlay" class="overlay">
-                        <h4>
-                            Hotel website (clone)
-                        </h4>
-                        <p>
-                            This is a hotel website clone I made in order to practice and hone my JavaScript skills. I mainly focused on the
-                            date-picking section.
-                        </p>
-                        <p>
-                            <b>Technologies:</b> HTML, CSS, Bootstrap, JavaScript, jQuery
-                        </p>
-                        <a href="https://zepolj1126.github.io/hotelwebsiteclone"><button class="btn btn-danger">See website</button></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-5">
-                <div class="imageContainer" onclick="taskmanager()">
-                    <img id="checkmarkPic" src="checkmarkBlack.png" class="image" style="background-color:white;object-fit:contain;">
-                    <div id="taskmanageroverlay" class="overlay">
-                        <h4>
-                            Task Manager app
-                        </h4>
-                        <p>
-                            This is a Task Manager app I made using vanilla JavaScript and jQuery.
-                        </p>
-                        <p>
-                            <b>Technologies:</b> HTML, CSS, Bootstrap, JavaScript, jQuery
-                        </p>
-                        <a href="https://zepolj1126.github.io/taskmanager"><button class="btn btn-danger">See app</button></a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!--
-        <div class="row">
-
-            <div class="col-lg-3 mb-3 p-4">
-                <div class="card " style="max-width:500px;">
-                    <img class="card-img-top" src="latestlogo3.png" alt="Card image cap" style="object-fit:cover;">
-                    <div class="card-body">
-                        <h4 class="card-title">saulfencing.com</h4>
-                        <p class="card-text">
-                            This is a mostly static website I made for my friend who runs a construction business.
-                            This site advertises and showcases his work. It also contains a contact page (made with PHP) where you can send him a message, which goes
-                            straight to his email.
-                        </p>
-                        <p>
-                            <b>Technologies:</b> HTML, CSS, Bootstrap, PHP
-                        </p>
-                        <a href="#" class="btn btn-primary">See website</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-3 p-4">
-                <div class="card " style="max-width:500px;">
-                    <img class="card-img-top" src="EnnscribeLogoWeb.jpg" alt="Card image cap" style="object-fit:cover;">
-                    <div class="card-body">
-                        <h4 class="card-title">ennscribe.com</h4>
-                        <p class="card-text">
-                            This is a mostly static website I made for my friend who's a technical/copy writer.
-                            This site advertises and showcases her work. It also contains a contact page (made with PHP) where you can send her a message, which goes
-                            straight to her email.
-                        </p>
-                        <p>
-                            <b>Technologies:</b> HTML, CSS, Bootstrap, PHP
-                        </p>
-                        <a href="#" class="btn btn-primary">See website</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-3 p-4">
-                <div class="card " style="max-width:500px;">
-                    <img class="card-img-top" src="exterior.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Hotel website (clone)</h4>
-                        <p class="card-text">
-                            This is a hotel website clone I made in order to get more practice on my JavaScript.
-                        </p>
-                        <p>
-                            <b>Technologies:</b> HTML, CSS, Bootstrap, JavaScript, jQuery
-                        </p>
-                        <a href="#" class="btn btn-primary">See website</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-3 mb-3 p-4">
-                <div class="card " style="max-width:500px;">
-                    <img class="card-img-top" src="checkmark1.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">To-do List App</h4>
-                        <p class="card-text">
-                            This is a to-do list app I made using vanilla JavaScript.
-                        </p>
-                        <p>
-                            <b>Technologies:</b> HTML, CSS, Bootstrap, JavaScript, jQuery
-                        </p>
-                        <a href="#" class="btn btn-primary">See app</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        -->
-    </div>
-
-
-    <hr style="background-color:#575757;" />
-
-
-    <div id="skills" class="container-fluid" style="background-color:;text-align:center;">
-
-        <h1 style="color:#575757;text-align:center;">Skills</h1>
-
-        <br />
-
-        <div class="row">
-
-            <div class="col p-3">
-                <i style="font-size:70px;" class="devicon-html5-plain-wordmark colored"></i>
-            </div>
-
-            <div class="col p-3">
-                <i style="font-size:70px;" class="devicon-css3-plain-wordmark colored"></i>
-            </div>
-
-            <div class="col p-3">
-                <i style="font-size:70px;" class="devicon-javascript-plain colored"></i>
-            </div>
-
-            <div class="col p-3">
-                <i style="font-size:70px;" class="devicon-bootstrap-plain-wordmark colored"></i>
-            </div>
-
-            <div class="col p-3">
-                <i style="font-size:70px;" class="devicon-jquery-plain-wordmark colored"></i>
-            </div>
-
-            <div class="col p-3">
-                <i style="font-size:70px;" class="devicon-vuejs-plain-wordmark colored"></i>
-            </div>
-
-        </div>
-
-        <br /><br />
-
-        <span style="color:#212529;font-size:20px;">HTML, CSS, JavaScript, Bootstrap, jQuery, and currently learning Vue.js</span>
-
-        <br />
-
-    </div>
-
-
-    <hr style="background-color:#575757;" />
-
-
-    <div id="about" class="container-fluid" style="">
-
-        <h1 style="color:#575757;text-align:center;">About Me</h1>
-
-        <br />
-
-        <span style="color:#212529;font-size:20px;">
-            Hi, my name is Joshua and I am a front-end developer. I graduated in December 2019 with a degree in Computer Information Technology from Oral Roberts University.
-            Although I have an IT degree, I am absolutely fascinated by programming and web development. This fascination started in my junior year of college. I took a required
-            Internet Programming course and was instantly hooked! It was fascinating being able to create things and display them on the web. After graduating, I decided
-            that I wanted to focus on programming and web development. I've been practicing web development for about a year now and absolutely love everything about it.
-            I'm currently learning Vue.js and I'm having a blast!
-        </span>
-
-        <br />
-
-    </div>
-
-
-    <hr style="background-color:#575757;" />
-
-
-    <div id="resume" class="container-fluid" style="text-align:center;">
-
-        <h1 style="color:#575757;text-align:center;">Resume</h1>
-
-        <br />
-
-        <div style="border:1px solid #212529;padding:30px;display:inline-block;">
-            <a href="link/to/your/download/file" download style="color:#212529;font-size:20px;">
-                download my resume
-            </a>
-        </div>
-
-        <br />
-
-    </div>
-
-
-    <hr style="background-color:#575757;" />
-
-
-    <div id="contact" class="container-fluid" style="text-align:center;">
-
-        <h1 style="color:#575757;text-align:center;">Contact</h1>
-
-        <br />
-
-        <span style="font-size:20px;">j.lopez1997@hotmail.com</span>
-           
-        <br /><br />
-
-    </div>
-
-
-    <div id="footer" class="container-fluid" style="background-color:#1F375C;text-align:center;">
-
-        <br />
-        
-        <div style="padding:10px;color:white;text-align:center;">
-            <a href="https://www.linkedin.com/in/joshua-l-36876b193" style="color:white;"><i class="fab fa-linkedin" style="font-size:35px;"></i></a>
-            &emsp;
-            <a href="https://github.com/zepolj1126/zepolj1126.github.io" style="color:white;"><i style="font-size:35px;" class="fab fa-github"></i></a>
-        </div>
-        
-        <br />
-
-    </div>
-
-    <script>
-        /*function showOverlay2() {
-            var overlay2 = document.getElementById("overlay2");
-
-            overlay2.style.opacity = "1";
-        }
-
-        function hideOverlay2() {
-            var overlay2 = document.getElementById("overlay2");
-
-            overlay2.style.opacity = "0";
-        }*/
-
-        function saulfencing() {
-
-            var imageContainerId = document.getElementById("imageContainerId");
-            var saulfencingoverlay = document.getElementById("saulfencingoverlay");
-
-            //imageContainerId.addEventListener("click", function () {
-
-            /*if ($('.overlay').css('opacity', '0')) {
-
-                $('.overlay').css('opacity', '1');
-            } else {
-                $('.overlay').css('opacity', '0');
-            }*/
-
-            if (saulfencingoverlay.classList.contains("overlay")) {
-
-                saulfencingoverlay.classList.remove("overlay");
-                saulfencingoverlay.classList.add("overlay2");
-
-            } else {
-
-                saulfencingoverlay.classList.remove("overlay2");
-                saulfencingoverlay.classList.add("overlay");
-
-            }
-
-            //});
-
-        }
-
-        function ennscribe() {
-
-            var imageContainerId = document.getElementById("imageContainerId");
-            var ennscribeoverlay = document.getElementById("ennscribeoverlay");
-
-            //imageContainerId.addEventListener("click", function () {
-
-            /*if ($('.overlay').css('opacity', '0')) {
-
-                $('.overlay').css('opacity', '1');
-            } else {
-                $('.overlay').css('opacity', '0');
-            }*/
-
-            if (ennscribeoverlay.classList.contains("overlay")) {
-
-                ennscribeoverlay.classList.remove("overlay");
-                ennscribeoverlay.classList.add("overlay2");
-
-            } else {
-
-                ennscribeoverlay.classList.remove("overlay2");
-                ennscribeoverlay.classList.add("overlay");
-
-            }
-
-            //});
-
-        }
-
-        function hotelsite() {
-
-            var imageContainerId = document.getElementById("imageContainerId");
-            var hotelsiteoverlay = document.getElementById("hotelsiteoverlay");
-
-            //imageContainerId.addEventListener("click", function () {
-
-            /*if ($('.overlay').css('opacity', '0')) {
-
-                $('.overlay').css('opacity', '1');
-            } else {
-                $('.overlay').css('opacity', '0');
-            }*/
-
-            if (hotelsiteoverlay.classList.contains("overlay")) {
-
-                hotelsiteoverlay.classList.remove("overlay");
-                hotelsiteoverlay.classList.add("overlay2");
-
-            } else {
-
-                hotelsiteoverlay.classList.remove("overlay2");
-                hotelsiteoverlay.classList.add("overlay");
-
-            }
-
-            //});
-
-        }
-
-        function taskmanager() {
-
-            var imageContainerId = document.getElementById("imageContainerId");
-            var taskmanageroverlay = document.getElementById("taskmanageroverlay");
-
-            //imageContainerId.addEventListener("click", function () {
-
-            /*if ($('.overlay').css('opacity', '0')) {
-
-                $('.overlay').css('opacity', '1');
-            } else {
-                $('.overlay').css('opacity', '0');
-            }*/
-
-            if (taskmanageroverlay.classList.contains("overlay")) {
-
-                taskmanageroverlay.classList.remove("overlay");
-                taskmanageroverlay.classList.add("overlay2");
-
-            } else {
-
-                taskmanageroverlay.classList.remove("overlay2");
-                taskmanageroverlay.classList.add("overlay");
-
-            }
-
-            //});
-
-        }
-
-    </script>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-</body>
-</html>
+  <body>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top py-0">
+
+          <a class="navbar-brand" href="#">
+              <img src="logo.png" class="img-fluid" width="100" height="100" loading="lazy">
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav ml-auto">
+
+                  <li class="nav-item active">
+                      <a class="nav-link" href="exp1.2.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="#projects">Projects</a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="#skills">Skills</a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="#resume">Resume</a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="#aboutme">About Me</a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+
+              </ul>
+          </div>
+
+      </nav>
+
+      <br /><br /><br />
+
+      <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-4 my-2 px-4">
+                      <img src="logo.png" class="img-fluid" />
+                  </div>
+                  <div class="col-lg-8 my-2 px-4">
+                      <h3 class="display-4">Joshua Lopez</h3>
+                      <p class="lead">Front-End Web Developer</p>
+                      <hr />
+                      <p class="lead">
+                          <i>Hard-working and detail-oriented web developer seeking
+                          to work and expand my knowledge in programming and web development.</i>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <br /><br />
+
+      <div id="projects" class="jumbotron jumbotron-fluid">
+          <div class="container">
+              <h1 class="display-4">Projects</h1>
+              <hr />
+
+              <div class="row">
+
+                  <div class="col my-3">
+                      <div class="card" style="width: 18rem;">
+                          <img src="latestlogo3.png" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h5 class="card-title">Saul Fencing</h5>
+                              <p class="card-text">
+                                  This is a mostly static website I made for my friend who's owns a fencing business.
+                                  This site advertises and showcases his work. It also contains a contact page (made with PHP) where you can
+                                  send him a message, which goes straight to his email.
+                              </p>
+                              <a href="https://saulfencing.com" class="btn btn-primary">See website</a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col my-3">
+                      <div class="card" style="width: 18rem;">
+                          <img src="EnnscribeLogoWeb.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h5 class="card-title">Ennscribe</h5>
+                              <p class="card-text">
+                                  This is a mostly static website I made for my friend who's a copy/technical writer.
+                                  This site advertises and showcases her work. It also contains a contact page (made with PHP) where you can
+                                  send her a message, which goes straight to her email.
+                              </p>
+                              <a href="https://zepolj1126.github.io/ennscribe" class="btn btn-primary">See website</a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col my-3">
+                      <div class="card" style="width: 18rem;">
+                          <img src="exterior.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h5 class="card-title">Hotel Site (clone)</h5>
+                              <p class="card-text">
+                                  This is a hotel website clone I made in order to practice and hone my JavaScript skills.
+                                  I mainly focused on the date-picking section.
+                              </p>
+                              <a href="https://zepolj1126.github.io/hotelwebsiteclone" class="btn btn-primary">See website</a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col my-3">
+                      <div class="card" style="width: 18rem;">
+                          <img src="checkmarkBlack.png" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h5 class="card-title">Task Manager</h5>
+                              <p class="card-text">
+                                  This is a task manager app I made using vanilla JavaScript and jQuery.
+                              </p>
+                              <a href="https://zepolj1126.github.io/taskmanager" class="btn btn-primary">See app</a>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+
+          </div>
+      </div>
+
+      <br /><br />
+
+      <div id="skills" class="jumbotron jumbotron-fluid">
+          <div class="container">
+              <h3 class="display-4">Skills</h3>
+              <hr />
+              <div class="row">
+                  <div class="col my-3">
+                      <i style="font-size:70px;" class="devicon-html5-plain-wordmark colored"></i>
+                  </div>
+                  <div class="col my-3">
+                      <i style="font-size:70px;" class="devicon-css3-plain-wordmark colored"></i>
+                  </div>
+                  <div class="col my-3">
+                      <i style="font-size:70px;" class="devicon-javascript-plain colored"></i>
+                  </div>
+                  <div class="col my-3">
+                      <i style="font-size:70px;" class="devicon-bootstrap-plain-wordmark colored"></i>
+                  </div>
+                  <div class="col my-3">
+                      <i style="font-size:70px;" class="devicon-jquery-plain-wordmark colored"></i>
+                  </div>
+                  <div class="col my-3">
+                      <i style="font-size:70px;" class="devicon-react-original-wordmark colored"></i>
+                  </div>
+              </div>
+              <br />
+              <p class="lead">
+                  <b>HTML, CSS, JavaScript, Bootstrap, jQuery, and currently learning React.</b>
+              </p>
+          </div>
+      </div>
+
+      <br /><br />
+
+      <div id="resume" class="jumbotron jumbotron-fluid">
+          <div class="container">
+              <h3 class="display-4">Resume</h3>
+              <hr />
+              <p>
+                  <a href="JoshuaLopezWebDevResume.docx"><b>Download my Resume</b></a>
+              </p>
+          </div>
+      </div>
+
+      <br /><br />
+
+      <div id="aboutme" class="jumbotron jumbotron-fluid">
+          <div class="container">
+              <h3 class="display-4">About Me</h3>
+              <hr />
+              <p class="lead">
+                  <b>Hi, my name is Joshua and I am a front-end web developer. I graduated in December 2019 with a degree in Computer Information Technology from Oral Roberts University.
+                  Although I have an IT degree, I am absolutely fascinated by programming and web development. This fascination started in my junior year of college. I took a required
+                  Internet Programming course and was instantly hooked! It was fascinating being able to create things and display them on the web. After graduating, I decided
+                  that I wanted to focus on programming and web development. I've been practicing web development for about a year now and absolutely love everything about it.
+                  I'm currently learning React and I'm having a blast!</b>
+              </p>
+          </div>
+      </div>
+
+      <br /><br />
+
+      <div id="contact" class="jumbotron jumbotron-fluid">
+          <div class="container">
+              <h3 class="display-4">Contact</h3>
+              <hr />
+              <p class="lead">
+                  <i class="fas fa-envelope"></i>&emsp;<b>j.lopez1997@hotmail.com</b>
+              </p>
+          </div>
+      </div>
+
+      <br /><br />
+
+      <div class="container-fluid" style="background-color:rgb(52,58,64);padding:50px;text-align:center;">
+          <a href="https://www.linkedin.com/in/joshua-l-36876b193" style="color:white;"><i class="fab fa-linkedin" style="font-size:35px;"></i></a>
+          &emsp;
+          <a href="https://github.com/zepolj1126/zepolj1126.github.io" style="color:white;"><i style="font-size:35px;" class="fab fa-github"></i></a>
+      </div>
+
+
+
+      <script>
+
+      </script>
+
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  </body>
+    </html>
