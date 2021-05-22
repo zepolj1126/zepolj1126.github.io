@@ -1,0 +1,222 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    animation: transitionIn 0.70s;
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+.navbar {
+    background-color: rgba(255, 242, 242, .97) !important;
+}
+
+i {
+    font-size: 70px;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+    a:hover {
+        color: black;
+        text-shadow: 2px 2px 2px rgba(255, 66, 66, .97);
+    }
+
+.nav-icon {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+}
+
+.nav-icon-content-wrapper {
+    display: inline-block;
+}
+
+.intro-subtext {
+    text-align: left;
+}
+
+.intro-subtext p {
+    font-size: 18px;
+}
+
+.about-me-intro-text {
+    font-size: 20px;
+    text-align: left;
+}
+
+.career-journey-block {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: left;
+    cursor: pointer;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+}
+
+.career-journey-block:hover {
+    box-shadow: 5px 5px 5px;
+}
+
+.career-journey-position {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.career-journey-company {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.career-journey-date {
+    font-size: 20px;
+}
+
+.career-journey-modal-body {
+    font-size: 20px;
+}
+
+.testimonial-text {
+    text-align: left;
+}
+
+.testimonial-body {
+    font-size: 22px;
+}
+
+.testimonial-reviewer-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.testimonial-reviewer-company {
+    font-size: 18px;
+}
+
+.page-footer-container {
+    background-color: rgba(255, 242, 242, .97);
+    position: relative;
+    bottom: 0;
+}
+
+.page-footer-icon {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+.flip-box {
+    background-color: transparent;
+    width: 400px;
+    min-height: 250px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-box-front {
+    background-color: rgba(2, 14, 79, .50);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-box-back {
+    background-color: rgba(255, 232, 232, .50);
+    color: black;
+    transform: rotateY(180deg);
+    padding: 10px;
+    font-weight: bold;
+    overflow-y: scroll;
+}
+
+.ux-sample-container {
+    border: solid black 1px;
+    padding: 15px;
+    min-height: 200px;
+}
+
+.ux-writing-intro-text {
+    font-size: 20px;
+    text-align: left;
+}
+
+.ux-writing-before-after-text {
+    font-style: italic;
+    font-size: 18px;
+}
+
+.ux-writing-work-sample-text {
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.copywriting-intro-text {
+    font-size: 20px;
+    text-align: left;
+}
+
+.scrollBackUpBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgba(2, 14, 79, .30);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.technical-writing-intro-text {
+    font-size: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+}
