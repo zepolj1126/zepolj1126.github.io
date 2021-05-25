@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 body {
     font-family: 'Raleway', sans-serif;
@@ -58,7 +58,7 @@ a {
 }
 
 .about-me-intro-text {
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
 }
 
@@ -70,6 +70,7 @@ a {
     min-height: 350px;
     display: flex;
     align-items: center;
+    background-color: white;
 }
 
 .career-journey-block:hover {
@@ -99,16 +100,16 @@ a {
 }
 
 .testimonial-body {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .testimonial-reviewer-name {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
 }
 
 .testimonial-reviewer-company {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .page-footer-container {
@@ -179,8 +180,10 @@ a {
 }
 
 .ux-writing-intro-text {
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .ux-writing-before-after-text {
@@ -194,8 +197,10 @@ a {
 }
 
 .copywriting-intro-text {
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .scrollBackUpBtn {
@@ -215,8 +220,8 @@ a {
 }
 
 .technical-writing-intro-text {
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
-    display: flex;
-    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
