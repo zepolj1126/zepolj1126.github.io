@@ -18,7 +18,7 @@ body {
 }
 
 .navbar {
-    background-color: rgba(255, 242, 242, .97) !important;
+    background-color: rgba(255, 255, 255, .97) !important;
 }
 
 i {
@@ -31,12 +31,11 @@ i:hover {
 
 a {
     text-decoration: none;
-    color: black;
+    color: dimgray;
 }
 
     a:hover {
         color: black;
-        text-shadow: 2px 2px 2px rgba(255, 66, 66, .97);
     }
 
 .nav-icon {
@@ -51,6 +50,8 @@ a {
 
 .intro-subtext {
     text-align: left;
+    border: solid black 1px;
+    padding: 40px;
 }
 
 .intro-subtext p {
@@ -113,7 +114,7 @@ a {
 }
 
 .page-footer-container {
-    background-color: rgba(255, 242, 242, .97);
+    background-color: rgba(255, 255, 255, .97);
     position: relative;
     bottom: 0;
 }
