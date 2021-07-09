@@ -181,3 +181,19 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+
+
+$(document).ready(function () {
+
+    //Sticky Footer
+    function updateHeight() {
+        var bodyHeight = $(window).outerHeight() - $('.navbar').outerHeight() - $('.page-footer-container').outerHeight();
+        $('.container-wrapper').css('min-height', bodyHeight + 'px');
+    }
+    updateHeight();
+    $(window).on("resize", updateHeight);
+
+    
+
+});
