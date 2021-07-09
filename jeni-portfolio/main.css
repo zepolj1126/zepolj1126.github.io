@@ -3,6 +3,7 @@
 body {
     font-family: 'Raleway', sans-serif;
     animation: transitionIn 0.70s;
+    height: 5px;
 }
 
 @keyframes transitionIn {
@@ -18,7 +19,8 @@ body {
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, .97) !important;
+    /*background-color: rgba(255, 255, 255, .97) !important;*/
+    background-color: black !important;
 }
 
 i {
@@ -44,7 +46,33 @@ a {
     display: inline-block;
 }
 
+.nav-link {
+    color: white !important;
+}
+
+    .nav-link:hover {
+        color: #bfbfbf !important;
+    }
+
 .nav-icon-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px black solid;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+}
+
+.nav-icon-content-wrapper:hover {
+    box-shadow: 5px 5px 5px;
+    cursor: pointer;
+}
+
+.nav-icon-text {
+    font-size: 20px;
+    font-weight: bold;
     display: inline-block;
 }
 
@@ -113,6 +141,7 @@ a {
 
 .page-footer-container {
     background-color: rgba(255, 255, 255, .97);
+    background-color: black;
     position: relative;
     bottom: 0;
 }
@@ -211,7 +240,7 @@ a {
     font-size: 18px;
     border: none;
     outline: none;
-    background-color: rgba(2, 14, 79, .30);
+    background-color: rgba(0, 0, 0, .30);
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -227,21 +256,35 @@ a {
 .banner-img-container {
     position: relative;
     text-align: center;
-    color: white;
+    box-shadow: 5px 5px 5px;
 }
+
+    .banner-img-container:hover {
+        box-shadow: 8px 8px 8px;
+        cursor: pointer;
+    }
 
 .banner-img-centered-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: ;
-    padding: ;
+    background-color: white;
+    padding: 15px;
     color: black;
     font-weight: bold;
-    font-size: 34px;
+    font-size: 20px;
 }
 
 .banner-img {
-    opacity: .3;
+    opacity: ;
+}
+
+.navbar-toggler-icon {
+    background-color: white !important;
+}
+
+.navbar-toggler {
+    background-color: white !important;
+    color: white !important;
 }
