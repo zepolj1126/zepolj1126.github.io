@@ -182,7 +182,7 @@ a {
 }
 
 .flip-box-front {
-    background-color: rgba(2, 14, 79, .50);
+    background-color: black /*rgba(2, 14, 79, .50)*/;
     color: white;
     text-align: center;
     font-weight: bold;
@@ -302,6 +302,12 @@ a {
 
 .jeni-span-banner-text {
     color: rgb(248,216,206);
+}
+
+.career-journey-intro-text {
+    text-align: center;
+    color: black;
+    padding: 25px;
 }
 
 @media only screen and (max-width: 600px) {
