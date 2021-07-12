@@ -76,11 +76,12 @@ a {
     display: inline-block;
 }
 
-.intro-subtext {
-    text-align: left;
+.intro-text {
+    text-align: center;
 }
 
-.intro-subtext p {
+.intro-subtext {
+    text-align: center;
     font-size: 18px;
 }
 
@@ -288,3 +289,24 @@ a {
     background-color: white !important;
     color: white !important;
 }
+
+.jeni-enns-banner-text {
+    font-size: 54px;
+    font-weight:;
+}
+
+.banner-sub-text {
+    font-size: 18px;
+    font-weight:;
+}
+
+.jeni-span-banner-text {
+    color: rgb(248,216,206);
+}
+
+@media only screen and (max-width: 600px) {
+    .jeni-enns-banner-text-container {
+        padding: 20px;
+    }
+}
+
