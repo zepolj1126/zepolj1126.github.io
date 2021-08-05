@@ -86,7 +86,7 @@ a {
 }
 
 .about-me-intro-text {
-    font-size: 18px;
+    font-size: 20px;
     text-align: left;
 }
 
@@ -99,6 +99,7 @@ a {
     display: flex;
     align-items: center;
     background-color: white;
+    box-shadow: 2px 2px 2px;
 }
 
 .career-journey-block:hover {
@@ -271,10 +272,12 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    padding: 15px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     color: black;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 26px;
 }
 
 .banner-img {
@@ -301,7 +304,7 @@ a {
 }
 
 .jeni-span-banner-text {
-    color: rgb(248,216,206);
+    color: /*rgb(248,216,206)*/;
 }
 
 .career-journey-intro-text {
@@ -314,5 +317,101 @@ a {
     .jeni-enns-banner-text-container {
         padding: 20px;
     }
+}
+
+.about-me-hero-image {
+    background-image: url("forest.jpg");
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.about-me-jeni-span-banner-text {
+    color: white;
+}
+
+.about-me-jeni-enns-banner-text {
+    font-size: 50px;
+    color: white;
+}
+
+.about-me-banner-text-container {
+    background-color: black;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.tech-writing-hero-image {
+    background-image: url("tech-writing-banner-pic.jpg");
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.tech-writing-banner-text-container {
+    background-color: black;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+.tech-writing-banner-text {
+    font-size: 46px;
+    color: white;
+}
+
+.ux-writing-hero-image {
+    background-image: url("ux-banner-pic.jpg");
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.ux-writing-banner-text-container {
+    background-color:;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+.ux-writing-banner-text {
+    font-size: 46px;
+    color: black;
+}
+
+.copywriting-hero-image {
+    background-image: url("copywriting-banner-pic2.jpg");
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.copywriting-banner-text-container {
+    background-color: black;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+.copywriting-banner-text {
+    font-size: 46px;
+    color: white;
 }
 
