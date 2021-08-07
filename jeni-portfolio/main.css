@@ -20,7 +20,7 @@ body {
 
 .navbar {
     /*background-color: rgba(255, 255, 255, .97) !important;*/
-    background-color: black !important;
+    background-color: black /*rgba(241,153,43, .97)*/ !important;
 }
 
 i {
@@ -77,11 +77,11 @@ a {
 }
 
 .intro-text {
-    text-align: center;
+    text-align: left;
 }
 
 .intro-subtext {
-    text-align: center;
+    text-align: left;
     font-size: 18px;
 }
 
@@ -142,16 +142,15 @@ a {
 }
 
 .page-footer-container {
-    background-color: rgba(255, 255, 255, .97);
-    background-color: black;
+    background-color: black /*rgba(241,153,43, .97)*/;
     position: relative;
     bottom: 0;
 }
 
 .page-footer-icon {
     display: inline-block;
-    height: 60px;
-    width: 60px;
+    height: 45px;
+    width: 45px;
 }
 
 .flip-box {
@@ -210,8 +209,8 @@ a {
 }
 
 .ux-writing-intro-text {
-    font-size: 18px;
-    text-align: center;
+    font-size: 24px;
+    text-align: left;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -227,8 +226,8 @@ a {
 }
 
 .copywriting-intro-text {
-    font-size: 18px;
-    text-align: center;
+    font-size: 24px;
+    text-align: left;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -250,8 +249,8 @@ a {
 }
 
 .technical-writing-intro-text {
-    font-size: 18px;
-    text-align: center;
+    font-size: 24px;
+    text-align: left;
     padding: 10px;
 }
 
@@ -271,11 +270,11 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: rgba(0,0,0,.60);
     padding-top: 15px;
     padding-left: 20px;
     padding-right: 20px;
-    color: black;
+    color: white;
     font-weight: bold;
     font-size: 26px;
 }
@@ -339,7 +338,7 @@ a {
 }
 
 .about-me-banner-text-container {
-    background-color: black;
+    background-color: rgba(0,0,0,.60);
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -347,7 +346,7 @@ a {
 }
 
 .tech-writing-hero-image {
-    background-image: url("tech-writing-banner-pic.jpg");
+    background-image: url("blue-banner-pic.jpg");
     background-color: #cccccc;
     height: 500px;
     background-position: center;
@@ -357,7 +356,7 @@ a {
 }
 
 .tech-writing-banner-text-container {
-    background-color: black;
+    background-color: rgba(0,0,0,.60);
     padding-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
@@ -403,7 +402,7 @@ a {
 }
 
 .copywriting-banner-text-container {
-    background-color: black;
+    background-color: rgba(0,0,0,.60);
     padding-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
@@ -413,5 +412,46 @@ a {
 .copywriting-banner-text {
     font-size: 46px;
     color: white;
+}
+
+.contact-hero-image {
+    background-image: url("purple-space-pic.jpg");
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.contact-banner-text-container {
+    background-color: rgba(0,0,0,.60);
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+.contact-banner-text {
+    font-size: 46px;
+    color: white;
+}
+
+.get-to-know-me-container {
+    background-color: #fcfcfc;
+    background-image: url('get-to-know-me-pic.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.portfolio-section-container {
+    background-color: #f2f3f5;
+    /*background-image: url('black-sand-pic.jpg');*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
