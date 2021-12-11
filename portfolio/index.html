@@ -1,295 +1,614 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <link rel="icon" href="logo.png">
-    <link href="//db.onlinewebfonts.com/c/8e3ad27b0ffe0ef0484c6bf6a3eb9b16?family=Clarendon+LT+Std" rel="stylesheet" type="text/css" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <!-- jQuery -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- FontAwesome -->
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
     <!-- Devicons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
-    <title>JL Portfolio</title>
+
+    <title>Joshua Lopez</title>
 
     <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: darkgrey;
+            background-color: #F5F5F5;
+            background-image: url(background_image.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        p {
+            color: white;
+        }
+
+        .navbar {
+            background-color: rgba(2, 14, 79, .70);
+            padding: 10px;
+            margin: 0;
+        }
+
+        .nav-item {
+            margin: 5px;
         }
 
         .nav-link {
+            display: inline-block;
+            padding: 0;
+            text-align: center;
             font-size: 18px;
+            color: white;
         }
 
-        .card-img-top {
-            width: 100%;
-            height: 15vw;
-            object-fit: contain;
-        }
-
-        .carousel-item {
-            width: 100%; /*width you want*/
-            height: 500px; /*height you want*/
-            overflow: hidden;
-        }
-
-            .carousel-item img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
+            .nav-link:hover {
+                color: #dce0e6;
             }
 
-        .card {
-            max-height: 490px;
+        .navbar-nav {
+            padding: 10px;
         }
 
-        .card-body {
-            overflow: auto;
+        .fa-bars {
+            color: #1f375c;
         }
 
         @media only screen and (max-width: 1000px) {
             .navbar {
                 position: static;
             }
+
+            #saulfencingPic {
+                height: 400px;
+            }
+
+            #ennscribePic {
+                height: 400px;
+            }
+
+            #hotelPic {
+                height: 400px;
+            }
+
+            #checkmarkPic {
+                height: 400px;
+                object-fit: contain;
+            }
         }
 
+        .logo {
+            width: 100%;
+            max-width: 80px;
+            height: auto;
+        }
+
+        .title-section {
+            padding: 15px;
+        }
+
+        .tile {
+            background-color: rgba(2, 14, 79, .70);
+            background-color: rgba(255, 0, 132, 0.3);
+            box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+            padding: 10px;
+            width: 400px;
+            height: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .tile-img-container {
+            text-align: center;
+            background-color: white;
+            height: 200px;
+            border-radius: 5px;
+        }
+
+        .tile-img {
+            text-align: center;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .tile-text-container {
+            margin: 7px;
+        }
+
+        .tile-title-text {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .col-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .transparent-background {
+            background-color: rgba(2, 14, 79, .70);
+            /*background-image: linear-gradient( 156deg, #EADEDB 30%, #BC70A4 57%, #BFD641 83%);*/
+        }
+
+        hr {
+            color: white;
+        }
+
+        .title-background {
+            animation: myanimation 5s infinite;
+            box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+            height: 70px;
+        }
+
+        @keyframes myanimation {
+            0% {
+                background-color: rgba(27, 255, 0, 0.3);
+            }
+
+            25% {
+                background-color: rgba(0, 208, 255, 0.3);
+            }
+
+            50% {
+                background-color: rgba(255, 0, 80, .3);
+            }
+
+            75% {
+                background-color: rgba(240, 255, 0, 0.3);
+            }
+
+            100% {
+                background-color: rgba(27, 255, 0, 0.3);
+            }
+        }
+
+        .shadow {
+            /*box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px !important;*/
+            box-shadow: rgb(0 0 0 / 90%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px !important;
+        }
+
+        .btn-primary {
+            background-color: rgba(0, 208, 255, 0.3);
+            border: none;
+        }
+
+            .btn-primary:hover {
+                /*background-color: rgba(0, 208, 255, 0.5);*/
+                box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px !important;
+            }
+            
+        /*.btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary:focus {
+            outline: none;
+            box-shadow: none;
+        }*/
+
+        .custom-toggler {
+            border-color: white;
+        }
+
+        .navbar-toggler:focus,
+        .navbar-toggler:active,
+        .navbar-toggler-icon:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .test-section {
+            background-color: rgba(0, 0, 0, 0.5);
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+            
     </style>
-
 </head>
+<body>
 
-  <body>
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top py-0">
+    <nav class="navbar shadow navbar-expand-lg">
 
-          <a class="navbar-brand" href="#">
-              <img src="logo.png" class="img-fluid" width="100" height="100" loading="lazy">
-          </a>
+        <div class="container-fluid">
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon custom-navbar-toggler-icon"></span>
+            </button>
 
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav ml-auto">
+            <div id="navbarSupportedContent" class="collapse navbar-collapse justify-content-center">
 
-                  <li class="nav-item active">
-                      <a class="nav-link" href="exp1.2.html">Home <span class="sr-only">(current)</span></a>
-                  </li>
+                <ul class="navbar-nav">
 
-                  <li class="nav-item">
-                      <a class="nav-link" href="#projects">Projects</a>
-                  </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+                    </li>
 
-                  <li class="nav-item">
-                      <a class="nav-link" href="#skills">Skills</a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
 
-                  <li class="nav-item">
-                      <a class="nav-link" href="#resume">Resume</a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
 
-                  <li class="nav-item">
-                      <a class="nav-link" href="#aboutme">About Me</a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
 
-                  <li class="nav-item">
-                      <a class="nav-link" href="#contact">Contact</a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutme">About Me</a>
+                    </li>
 
-              </ul>
-          </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
 
-      </nav>
+                </ul>
 
-      <br /><br /><br />
+            </div>
 
-      <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-4 my-2 px-4">
-                      <img src="logo.png" class="img-fluid" />
-                  </div>
-                  <div class="col-lg-8 my-2 px-4">
-                      <h3 class="display-4">Joshua Lopez</h3>
-                      <p class="lead">Front-End Web Developer</p>
-                      <hr />
-                      <p class="lead">
-                          <i>Hard-working and detail-oriented web developer seeking
-                          to work and expand my knowledge in programming and web development.</i>
-                      </p>
-                  </div>
-              </div>
-          </div>
-      </div>
+        </div>
 
-      <br /><br />
+    </nav>
 
-      <div id="projects" class="jumbotron jumbotron-fluid">
-          <div class="container">
-              <h1 class="display-4">Projects</h1>
-              <hr />
 
-              <div class="row">
+    <!--
+    <div class="container-fluid title-section transparent-background shadow mt-5 mb-5 pb-5 pt-5">
 
-                  <div class="col my-3">
-                      <div class="card" style="width: 18rem;">
-                          <img src="latestlogo3.png" class="card-img-top" alt="...">
-                          <div class="card-body">
-                              <h5 class="card-title">Saul Fencing</h5>
-                              <p class="card-text">
-                                  This is a mostly static website I made for my friend who owns a fencing business.
-                                  This site advertises and showcases his work. It also contains a contact page (made with PHP) where you can
-                                  send him a message, which goes straight to his email.
-                              </p>
-                              <a href="https://saulfencing.com" class="btn btn-primary">See website</a>
-                          </div>
-                      </div>
-                  </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6">
+                <p style="font-size:52px;text-align:center;">Joshua Lopez</p>
+                <hr />
+                <p style="font-size:24px;text-align:center;">Front-End Web Developer</p>
+            </div>
+        </div>
 
-                  <div class="col my-3">
-                      <div class="card" style="width: 18rem;">
-                          <img src="EnnscribeLogoWeb.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                              <h5 class="card-title">Ennscribe</h5>
-                              <p class="card-text">
-                                  This is a mostly static website I made for my friend who's a copy/technical writer.
-                                  This site advertises and showcases her work. It also contains a contact page (made with PHP) where you can
-                                  send her a message, which goes straight to her email.
-                              </p>
-                              <a href="https://zepolj1126.github.io/ennscribe" class="btn btn-primary">See website</a>
-                          </div>
-                      </div>
-                  </div>
+    </div>
+    -->
 
-                  <div class="col my-3">
-                      <div class="card" style="width: 18rem;">
-                          <img src="exterior.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                              <h5 class="card-title">Hotel Site (clone)</h5>
-                              <p class="card-text">
-                                  This is a hotel website clone I made in order to practice and hone my JavaScript skills.
-                                  I mainly focused on the date-picking section.
-                              </p>
-                              <a href="https://zepolj1126.github.io/hotelwebsiteclone" class="btn btn-primary">See website</a>
-                          </div>
-                      </div>
-                  </div>
 
-                  <div class="col my-3">
-                      <div class="card" style="width: 18rem;">
-                          <img src="checkmarkBlack.png" class="card-img-top" alt="...">
-                          <div class="card-body">
-                              <h5 class="card-title">Task Manager</h5>
-                              <p class="card-text">
-                                  This is a task manager app I made using vanilla JavaScript and jQuery.
-                              </p>
-                              <a href="https://zepolj1126.github.io/taskmanager" class="btn btn-primary">See app</a>
-                          </div>
-                      </div>
-                  </div>
+    <div class="container-fluid test-section transparent-background shadow mt-5 mb-5 pb-5 pt-5">
 
-              </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <!--<div class="shadow" style="background-color:rgba(0, 0, 0, 0.7);width:100%;padding:65px;">-->
 
-          </div>
-      </div>
+                    <p style="font-size:52px;text-align:center;">Joshua Lopez</p>
+                    <hr />
+                    <p style="font-size:24px;text-align:center;">Front-End Web Developer</p>
 
-      <br /><br />
+                <!--</div>-->
+                
+            </div>
+        </div>
 
-      <div id="skills" class="jumbotron jumbotron-fluid">
-          <div class="container">
-              <h3 class="display-4">Skills</h3>
-              <hr />
-              <div class="row">
-                  <div class="col my-3">
-                      <i style="font-size:70px;" class="devicon-html5-plain-wordmark colored"></i>
-                  </div>
-                  <div class="col my-3">
-                      <i style="font-size:70px;" class="devicon-css3-plain-wordmark colored"></i>
-                  </div>
-                  <div class="col my-3">
-                      <i style="font-size:70px;" class="devicon-javascript-plain colored"></i>
-                  </div>
-                  <div class="col my-3">
-                      <i style="font-size:70px;" class="devicon-bootstrap-plain-wordmark colored"></i>
-                  </div>
-                  <div class="col my-3">
-                      <i style="font-size:70px;" class="devicon-jquery-plain-wordmark colored"></i>
-                  </div>
-                  <div class="col my-3">
-                      <i style="font-size:70px;" class="devicon-react-original-wordmark colored"></i>
-                  </div>
-              </div>
-              <br />
-              <p class="lead">
-                  <b>HTML, CSS, JavaScript, Bootstrap, jQuery, and currently learning React.</b>
-              </p>
-          </div>
-      </div>
-
-      <br /><br />
-
-      <div id="resume" class="jumbotron jumbotron-fluid">
-          <div class="container">
-              <h3 class="display-4">Resume</h3>
-              <hr />
-              <p>
-                  <a href="JoshuaLopezWebDevResume.docx"><b>Download my Resume</b></a>
-              </p>
-          </div>
-      </div>
-
-      <br /><br />
-
-      <div id="aboutme" class="jumbotron jumbotron-fluid">
-          <div class="container">
-              <h3 class="display-4">About Me</h3>
-              <hr />
-              <p class="lead">
-                  <b>Hi, my name is Joshua and I am a front-end web developer. I graduated in December 2019 with a degree in Computer Information Technology from Oral Roberts University.
-                  Although I have an IT degree, I am absolutely fascinated by programming and web development. This fascination started in my junior year of college. I took a required
-                  Internet Programming course and was instantly hooked! It was fascinating being able to create things and display them on the web. After graduating, I decided
-                  that I wanted to focus on programming and web development. I've been practicing web development for about a year now and absolutely love everything about it.
-                  I'm currently learning React and I'm having a blast!</b>
-              </p>
-          </div>
-      </div>
-
-      <br /><br />
-
-      <div id="contact" class="jumbotron jumbotron-fluid">
-          <div class="container">
-              <h3 class="display-4">Contact</h3>
-              <hr />
-              <p class="lead">
-                  <i class="fas fa-envelope"></i>&emsp;<b>j.lopez1997@hotmail.com</b>
-              </p>
-          </div>
-      </div>
-
-      <br /><br />
-
-      <div class="container-fluid" style="background-color:rgb(52,58,64);padding:50px;text-align:center;">
-          <a href="https://www.linkedin.com/in/joshua-l-36876b193" style="color:white;"><i class="fab fa-linkedin" style="font-size:35px;"></i></a>
-          &emsp;
-          <a href="https://github.com/zepolj1126/zepolj1126.github.io" style="color:white;"><i style="font-size:35px;" class="fab fa-github"></i></a>
-      </div>
+    </div>
 
 
 
-      <script>
+    <div id="projects" class="container-fluid transparent-background shadow mt-5 mb-5 pb-5 pt-5">
 
-      </script>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-center">
+                <div class="transparent-background title-background px-5" style="display:inline-block;border-radius:10px;">
+                    <p style="text-align:center;font-size:42px;">Projects</p>
+                </div>
+            </div>
+        </div>
 
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-  </body>
-    </html>
+        <div class="row justify-content-center pt-5 pb-3">
+
+
+            <div class="col-lg-4 col-center mt-3 mb-3 px-4">
+                <div class="tile">
+                    <div class="tile-img-container">
+                        <img class="tile-img img-fluid" src="ennscribe_logo_pic.png" />
+                    </div>
+                    <hr />
+                    <div class="tile-text-container">
+                        <p class="tile-title-text">Ennscribe</p>
+                        <p class="tile-body-text">
+                            This is a mostly static website I made for my friend who's a copy/technical writer.
+                            This site advertises and showcases her work. It also contains a contact page (made with PHP) where you can send her a message, which goes
+                            straight to her email.
+                        </p>
+                        <p class="tile-body-text">
+                            <b>Technologies:</b> HTML, CSS, Bootstrap, PHP
+                        </p>
+                        <a href="https://zepolj1126.github.io/ennscribe" target="_blank" class="btn btn-primary">See website</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-center mt-3 mb-3 px-4">
+                <div class="tile">
+                    <div class="tile-img-container">
+                        <img class="tile-img img-fluid" src="exterior.jpg" />
+                    </div>
+                    <hr />
+                    <div class="tile-text-container">
+                        <p class="tile-title-text">Hotel website (clone)</p>
+                        <p class="tile-body-text">
+                            This is a hotel website clone I made in order to practice and hone my JavaScript skills. I mainly focused on the
+                            date-picking section.
+                        </p>
+                        <p class="tile-body-text">
+                            <b>Technologies:</b> HTML, CSS, Bootstrap, JavaScript, jQuery
+                        </p>
+                        <a href="https://zepolj1126.github.io/hotelwebsiteclone" target="_blank" class="btn btn-primary">See website</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-center mt-3 mb-3 px-4">
+                <div class="tile">
+                    <div class="tile-img-container">
+                        <img class="tile-img img-fluid" src="checkmarkBlack.png" />
+                    </div>
+                    <hr />
+                    <div class="tile-text-container">
+                        <p class="tile-title-text">Task Manager app</p>
+                        <p class="tile-body-text">
+                            This is a Task Manager app I made using vanilla JavaScript and jQuery.
+                        </p>
+                        <p class="tile-body-text">
+                            <b>Technologies:</b> HTML, CSS, Bootstrap, JavaScript, jQuery
+                        </p>
+                        <a href="https://zepolj1126.github.io/taskmanager" target="_blank" class="btn btn-primary">See app</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row justify-content-center my-3">
+
+
+            <div class="col-lg-4 col-center mt-3 mb-3 px-4">
+                <div class="tile">
+                    <div class="tile-img-container">
+                        <img class="tile-img img-fluid" src="saul_fencing_logo.png" />
+                    </div>
+                    <hr />
+                    <div class="tile-text-container">
+                        <p class="tile-title-text">Saul Fencing</p>
+                        <p class="tile-body-text">
+                            This is a website I made for my friend who owns a fencing business.
+                            It advertises and showcases his work. It also contains a contact page (made with PHP) where you can send him a message,
+                            which goes straight to his email.
+                        </p>
+                        <p class="tile-body-text">
+                            <b>Technologies:</b> HTML, CSS, Bootstrap, PHP
+                        </p>
+                        <a href="https://www.saulfencing.com" target="_blank" class="btn btn-primary">See website</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-center mt-3 mb-3 px-4">
+                <div class="tile">
+                    <div class="tile-img-container">
+                        <img class="tile-img img-fluid" src="jeni_portfolio_face_pic.png" />
+                    </div>
+                    <hr />
+                    <div class="tile-text-container">
+                        <p class="tile-title-text">Jeni Enns - Portfolio</p>
+                        <p class="tile-body-text">
+                            This is a portfolio site I made for my friend, a copy/technical writer, which showcases and advertises her work.
+                        </p>
+                        <p class="tile-body-text">
+                            <b>Technologies:</b> HTML, CSS, Bootstrap
+                        </p>
+                        <a href="https://zepolj1126.github.io/jeni-portfolio/index.html" target="_blank" class="btn btn-primary">See website</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div id="skills" class="container-fluid transparent-background mt-5 mb-5 pt-5 pb-5 shadow" style="text-align:center;">
+
+        <div class="row justify-content-center pb-5">
+            <div class="col-lg-6">
+                <div class="transparent-background px-5 title-background" style="display:inline-block;border-radius:10px;">
+                    <p style="text-align:center;font-size:42px;">Skills</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row justify-content-center py-2">
+
+            <div class="col-sm-1 my-3 mx-5 col-center">
+                <i style="font-size:70px;" class="devicon-html5-plain-wordmark colored"></i>
+            </div>
+
+            <div class="col-sm-1 my-3 mx-5 col-center">
+                <i style="font-size:70px;" class="devicon-css3-plain-wordmark colored"></i>
+            </div>
+
+            <div class="col-sm-1 my-3 mx-5 col-center">
+                <i style="font-size:70px;" class="devicon-javascript-plain colored"></i>
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center py-2">
+
+            <div class="col-sm-1 my-3 mx-3 mx-5 col-center">
+                <i style="font-size:70px;" class="devicon-bootstrap-plain-wordmark colored"></i>
+            </div>
+
+            <div class="col-sm-1 my-3 mx-3 mx-5 col-center">
+                <i style="font-size:70px;" class="devicon-jquery-plain-wordmark colored"></i>
+            </div>
+
+            <div class="col-sm-1 my-3 mx-3 mx-5 col-center">
+                <i style="font-size:70px;" class="devicon-react-plain-wordmark colored"></i>
+            </div>
+
+        </div>
+
+
+        <div class="row justify-content-center pt-5">
+            <div class="col-lg-6">
+                <p style="font-size:20px;">HTML, CSS, JavaScript, Bootstrap, jQuery, React (learning)</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div id="about" class="container-fluid transparent-background mt-5 mb-5 pt-5 pb-5 shadow">
+
+        <div class="row justify-content-center pb-3">
+            <div class="col-lg-6 col-center">
+                <div class="transparent-background px-5 title-background" style="display:inline-block;border-radius:10px;">
+                    <p style="text-align:center;font-size:42px;">About Me</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center pt-5 pb-2">
+            <div class="col-lg-8 px-5">
+                <p style="font-size:20px;">
+                    Hi, my name is Joshua and I am a front-end developer. I graduated in December 2019 with a degree in Computer Information Technology from Oral Roberts University.
+                    Although I have an IT degree, I am absolutely fascinated by programming and web development. This fascination started in my junior year of college. I took a required
+                    Internet Programming course and was instantly hooked! It was fascinating being able to create things and display them on the web. After graduating, I decided
+                    that I wanted to focus on programming and web development. I've been practicing web development for about a year now and absolutely love everything about it.
+                    I am currently learning React and having a blast!
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div id="resume" class="container-fluid transparent-background mt-5 mb-5 pt-5 pb-5 shadow" style="text-align:center;">
+
+        <div class="row justify-content-center pb-3">
+            <div class="col-lg-6 col-center">
+                <div class="transparent-background px-5 title-background" style="display:inline-block;border-radius:10px;">
+                    <p style="text-align:center;font-size:42px;">Resume</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center pt-5 pb-2">
+            <div class="col-lg-6">
+                <div style="display:inline-block;">
+                    <a href="link/to/your/download/file" download style="color:white;font-size:20px;">
+                        click this link to download my resume
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div id="contact" class="container-fluid transparent-background mt-5 mb-5 pt-5 pb-5 shadow" style="text-align:center;">
+
+        <div class="row justify-content-center pb-3">
+            <div class="col-lg-6 col-center">
+                <div class="transparent-background px-5 title-background" style="display:inline-block;border-radius:10px;">
+                    <p style="text-align:center;font-size:42px;">Contact</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center pt-5">
+            <div class="col-lg-6" style="display:flex;align-items:center;justify-content:center;">
+                <i style="font-size:35px;color:white;" class="fas fa-envelope"></i> &emsp; <span style="font-size:20px;color:white;">j.lopez1997@hotmail.com</span>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div id="footer" class="container-fluid transparent-background mt-5 pt-4 pb-4 shadow" style="text-align:center;">
+
+        <div class="row justify-content-center">
+
+            <div class="col-sm-12">
+                <a href="https://www.linkedin.com/in/joshua-l-36876b193" style="color:white;"><i class="fab fa-linkedin" style="font-size:35px;"></i></a>
+                &emsp;
+                <a href="https://github.com/zepolj1126/zepolj1126.github.io" style="color:white;"><i style="font-size:35px;" class="fab fa-github"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        var btnPrimary = document.getElementsByClassName("btn-primary");
+
+        for (var i = 0; i < btnPrimary.length; i++) {
+
+            btnPrimary[i].onmouseover = function () {
+                this.style.backgroundColor = "rgba(0, 208, 255, 0.5)";
+            }
+
+            btnPrimary[i].onmouseout = function () {
+                this.style.backgroundColor = "rgba(0, 208, 255, 0.3)";
+            }
+
+            btnPrimary[i].onmousedown = function () {
+                this.style.backgroundColor = "rgba(0, 208, 255, 0.3)";
+                this.style.outLine = "none";
+                this.style.boxShadow = "none";
+            }
+
+            btnPrimary[i].onmouseup = function () {
+                this.style.backgroundColor = "rgba(0, 208, 255, 0.3)";
+            }
+
+        }
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
