@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+      
+    /*Mobile: 375px
+    Desktop: 1440px*/
+
+    /*Soft blue: hsl(215, 51%, 70%)
+    Cyan: hsl(178, 100%, 50%)*/
+
+    /*Very dark blue (main BG): hsl(217, 54%, 11%)
+    Very dark blue (card BG): hsl(216, 50%, 16%)
+    Very dark blue (line): hsl(215, 32%, 27%)
+    White: hsl(0, 0%, 100%)*/
+
+    /*font-family: [Outfit](https://fonts.google.com/specimen/Outfit)
+    font-weight: 300, 400, 600*/
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: hsl(217, 54%, 11%);
+      font-family: 'Outfit', sans-serif;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      /*border: 2px solid black;*/
+    }
+
+    .card-container {
+      display: inline-block;
+      background-color: hsl(216, 50%, 16%);
+      padding: 0 20px 0 20px;
+      border-radius: 10px;
+    }
+
+    .card {
+      width: 300px;
+      height: 100%;
+      background-color: hsl(216, 50%, 16%);
+      border-radius: 10px;
+      padding: 20px 0 30px 0;
+    }
+
+    .equi-image-container {
+      position: relative;
+      font-size: 0;
+    }
+
+    .equi-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .equi-image-overlay {
+      position: absolute; 
+      bottom: 0; 
+      background: rgba(0, 255, 255, 0.5);
+      background-image: url("images/icon-view.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      transition: .5s ease;
+      opacity: 0;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    .equi-image-container:hover .equi-image-overlay {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .equi-text {
+      color: hsl(0, 0%, 100%);
+      font-weight: 600;
+      font-size: 20px;
+      margin-top: 25px;
+      display: inline-block;
+    }
+
+    .equi-text:hover {
+      color: hsl(178, 100%, 50%);
+      cursor: pointer;
+    }
+
+    .equi-text2 {
+      color: hsl(215, 51%, 70%);
+      margin-top: 20px;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    .icon-text-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+
+    }
+
+    .icon-text {
+      color: hsl(178, 100%, 50%);
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+    }
+
+    .icon-text span {
+      margin-left: 10px;
+    }
+
+    .icon-text2 {
+      color: hsl(215, 51%, 70%);
+      display: flex;
+      align-items: center;
+      font-weight: 300;
+    }
+
+    .icon-text2 span {
+      margin-left: 10px;
+    }
+
+    hr {
+      margin-top: 25px;
+      height: 0px;
+      border: none;
+      border-top: 1px solid hsl(215, 32%, 27%);
+    }
+
+    .creation-text-container {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .creation-text-container img {
+      width: 30px;
+      border: 1px solid hsl(0, 0%, 100%);
+      border-radius: 15px;
+    }
+
+    .creation-text-container span {
+      color: hsl(215, 51%, 70%);
+      margin-left: 15px;
+    }
+
+    .creation-text-container .author-name {
+      color: hsl(0, 0%, 100%);
+      margin-left: 7px;
+    }
+
+    .author-name:hover {
+      color: hsl(178, 100%, 50%);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!--<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Joshua Lopez</a>.
+  </div>-->
+
+<div class="main-container">
+
+  <div class="card-container">
+
+    <div class="card">
+
+      <div class="equi-image-container">
+        <img class="equi-image" src="images/image-equilibrium.jpg">
+        <div class="equi-image-overlay"></div>
+      </div>
+      
+      <div class="equi-text">Equilibrium #3429</div>
+
+      <div class="equi-text2"><p>Our Equilibrium collection promotes balance and calm.</p></div>
+
+      <div class="icon-text-container">
+        <div class="icon-text"><img src="images/icon-ethereum.svg"><span>0.041 ETH</span></div>
+        <div class="icon-text2"><img src="images/icon-clock.svg"><span>3 days left</span></div>
+      </div>
+
+      <hr>
+
+      <div class="creation-text-container">
+        <img src="images/image-avatar.png">
+        <div><span>Creation of</span><span class="author-name">Jules Wyvern</span></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
