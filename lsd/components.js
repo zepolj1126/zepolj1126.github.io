@@ -27,7 +27,7 @@ class myHeader extends HTMLElement {
         <div class="container-fluid">
 
             <a class="navbar-brand mx-3" href="index.html">
-                <img src="lsd-logo-300ppi.png" alt="" class="header-logo" style="width:100%;height:90px;">
+                <img src="lsd-logo-300ppi.png" alt="" class="header-logo">
             </a>
 
             <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,7 +97,7 @@ class myFooter extends HTMLElement {
 
         <div class="row justify-content-center mb-4" style="display:flex;align-items:center;">
             <div class="col-lg-4 mb-3">
-                <a href="index.html"><img class="footer-logo" src="text-logo-charcoal.png" alt="" style="max-width:300px;"></a>
+                <a href="index.html"><img class="footer-logo" src="text-logo-charcoal.png" alt=""></a>
             </div>
             <div class="col-lg-4">
                 <div class="footer-text">555-555-5555</div>
