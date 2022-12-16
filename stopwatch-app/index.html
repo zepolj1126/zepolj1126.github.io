@@ -57,7 +57,7 @@
             font-weight: bold;
         }
 
-        #elapsed-time {
+        /*#elapsed-time {
             width: 100%;
             min-height: 60px;
             border: solid black 2px;
@@ -67,7 +67,7 @@
             justify-content: start;
             align-items: center;
             padding: 5px;
-        }
+        }*/
 
         input {
             width: 100%;
@@ -122,10 +122,10 @@
         let resetButton = document.getElementById("reset-button");
         let milliseconds, seconds, minutes, hours;
 
-        let startTime;
+        /*let startTime;
         let endTime;
         let timeSpent;
-        let elapsedTime = document.getElementById("elapsed-time");
+        let elapsedTime = document.getElementById("elapsed-time");*/
 
         function start() {
 
@@ -133,7 +133,7 @@
 
             startButton.disabled = true;
 
-            startTime = new Date();
+            //startTime = new Date();
 
         }
 
@@ -163,31 +163,15 @@
 
             time.innerHTML = `${hours}:${minutes}:${seconds}:${milliseconds}`;
 
-            /*
-            if (s > 9) {
-                timePassing.innerHTML = `0${h}:0${m}:${s}:${ms}`;
-            } else if (m > 9) {
-                timePassing.innerHTML = `0${h}:${m}:0${s}:${ms}`;
-            } else if (h > 9) {
-                timePassing.innerHTML = `${h}:0${m}:0${s}:${ms}`;
-            } else {
-                timePassing.innerHTML = `0${h}:0${m}:0${s}:${ms}`;
-            }*/
-
         }
 
         function stop() {
             clearInterval(interval);
             startButton.disabled = false;
 
-            endTime = new Date();
+            /*endTime = new Date();
 
-            timeSpent = endTime - startTime;
-
-            /*elapsedTime.innerHTML += `${startTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} - ${endTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} = ${Math.trunc(timeSpent / 1000)} seconds` + "<br/>";*/
-
-            /*elapsedTime.innerHTML += `${startTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} - ${endTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} = ${hours}:${minutes}:${seconds}:${milliseconds} ` + "<br/>";*/
-
+            timeSpent = endTime - startTime;*/
         }
 
         function reset() {
@@ -198,7 +182,7 @@
             h = 0;
             time.innerHTML = `0${h}:0${m}:0${s}:00${ms}`;
             startButton.disabled = false;
-            elapsedTime.innerHTML = "";
+            //elapsedTime.innerHTML = "";
         }
 
     </script>
