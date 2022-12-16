@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- FontAwesome -->
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <!-- Devicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
+
+    <title>Stopwatch App</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .stopwatch {
+            width: 500px;
+            min-height: 350px;
+            border: solid 2px black;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            border: solid 2px black;
+            border-radius: 10px;
+            padding: 10px;
+            height: 60px;
+            width: 100%;
+            margin-left: 2px;
+            margin-right: 2px;
+            text-align: center;
+        }
+
+        #time {
+            width: 100%;
+            height: 60px;
+            border: solid black 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: arial;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        #elapsed-time {
+            width: 100%;
+            min-height: 60px;
+            border: solid black 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 5px;
+        }
+
+        input {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center my-2">
+            <div class="col d-flex justify-content-center">
+
+                <div class="stopwatch p-3">
+
+                    <div style="width:400px;">
+                        <div class="d-flex justify-content-center mb-3">
+                            <input placeholder="What are you working on?" type="text">
+                        </div>
+
+                        <div class="d-flex justify-content-center mb-3">
+                            <button id="stop-button" class="button" onclick="stop()">Stop</button>
+                            <button id="start-button" class="button" onclick="start()">Start</button>
+                            <button id="reset-button" class="button" onclick="reset()">Reset</button>
+                        </div>
+
+                        <div class="d-flex justify-content-center mb-3">
+                            <div id="time">00:00:00:000</div>
+                        </div>
+
+                        <!--<div class="d-flex justify-content-center">
+                            <div id="elapsed-time"></div>
+                        </div>-->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let ms = 0;
+        let s = 0;
+        let m = 0;
+        let h = 0;
+        let interval;
+        let time = document.getElementById("time");
+        let startButton = document.getElementById("start-button");
+        let stopButton = document.getElementById("stop-button");
+        let resetButton = document.getElementById("reset-button");
+        let milliseconds, seconds, minutes, hours;
+
+        let startTime;
+        let endTime;
+        let timeSpent;
+        let elapsedTime = document.getElementById("elapsed-time");
+
+        function start() {
+
+            interval = setInterval(timeDisplay, 10);
+
+            startButton.disabled = true;
+
+            startTime = new Date();
+
+        }
+
+        function timeDisplay() {
+
+            ms += 10;
+
+            if (ms == 1000) {
+                ms = 0;
+                s++;
+            }
+
+            if (s == 60) {
+                s = 0;
+                m++;
+            }
+
+            if (m == 60) {
+                m = 0;
+                h++;
+            }
+
+            seconds = s < 10 ? "0" + s : s;
+            minutes = m < 10 ? "0" + m : m;
+            hours = h < 10 ? "0" + h : h;
+            milliseconds = ms < 10 ? "00" + ms : ms < 100 ? "0" + ms : ms;
+
+            time.innerHTML = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+
+            /*
+            if (s > 9) {
+                timePassing.innerHTML = `0${h}:0${m}:${s}:${ms}`;
+            } else if (m > 9) {
+                timePassing.innerHTML = `0${h}:${m}:0${s}:${ms}`;
+            } else if (h > 9) {
+                timePassing.innerHTML = `${h}:0${m}:0${s}:${ms}`;
+            } else {
+                timePassing.innerHTML = `0${h}:0${m}:0${s}:${ms}`;
+            }*/
+
+        }
+
+        function stop() {
+            clearInterval(interval);
+            startButton.disabled = false;
+
+            endTime = new Date();
+
+            timeSpent = endTime - startTime;
+
+            /*elapsedTime.innerHTML += `${startTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} - ${endTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} = ${Math.trunc(timeSpent / 1000)} seconds` + "<br/>";*/
+
+            /*elapsedTime.innerHTML += `${startTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} - ${endTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} = ${hours}:${minutes}:${seconds}:${milliseconds} ` + "<br/>";*/
+
+        }
+
+        function reset() {
+            clearInterval(interval);
+            ms = 0;
+            s = 0;
+            m = 0;
+            h = 0;
+            time.innerHTML = `0${h}:0${m}:0${s}:00${ms}`;
+            startButton.disabled = false;
+            elapsedTime.innerHTML = "";
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
