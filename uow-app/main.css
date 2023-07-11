@@ -1,0 +1,178 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#uow-app-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid black 2px;
+    border-radius: 20px;
+    width: 1000px;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow: auto;
+    padding: 15px;
+    background-color: black;
+}
+
+.app-title {
+    text-align: center;
+    font-size: 26px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#table {
+    margin-top: 15px;
+    border: solid 2px black;
+    background-color: white;
+}
+
+.table-row {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.time {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.time>select {
+    font-size: 22px;
+    padding: 10px;
+}
+
+.ticket {
+    border: black solid 2px;
+    height: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.ticket-types-container>.ticket {
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.ticket-title {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.ticket-count {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+    border: solid black 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
+
+#uow-summary-info-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: black solid 2px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 22px;
+    min-height: 150px;
+    align-items: center;
+    background-color: white;
+}
+
+#total-uow {
+    margin-bottom: 15px;
+}
+
+#uow-value-info {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+#uow-value-info>span {
+    font-size: 16px;
+}
+
+#summary-button {
+    border: black solid 2px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+#summary-button:hover {
+    background-color: black;
+    color: white;
+}
+
+#uow-per-hour-info-container {
+    border: solid black 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    display: none;
+
+    /* position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    justify-content: center;
+    align-items: center; */
+}
+
+#uow-per-hour-total {
+    margin-right: 10px;
+}
+
+#uow-per-hour-info {
+    margin-right: 40px;
+}
+
+#uow-per-hour-info-container>#uow-per-hour-info,
+#uow-per-hour-info-2 {
+    text-align: center;
+}
