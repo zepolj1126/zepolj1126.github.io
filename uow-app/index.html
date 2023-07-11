@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- main.css -->
+    <link rel="stylesheet" href="main.css">
+
+    <title>UoW</title>
+</head>
+
+<body>
+
+    <div id="uow-app-container">
+
+        <div class="app-title">My Units of Work</div>
+
+        <div id="table">
+
+            <div class="table-row">
+
+                <div class="time">
+                    <select id="my-select">
+                        <option value="12 AM - 1 AM">
+                            12 AM - 1 AM
+                        </option>
+                        <option value="1 AM - 2 AM">
+                            1 AM - 2 AM
+                        </option>
+                        <option value="2 AM - 3 AM">
+                            2 AM - 3 AM
+                        </option>
+                        <option value="3 AM - 4 AM">
+                            3 AM - 4 AM
+                        </option>
+                        <option value="4 AM - 5 AM">
+                            4 AM - 5 AM
+                        </option>
+                        <option value="5 AM - 6 AM">
+                            5 AM - 6 AM
+                        </option>
+                        <option value="6 AM - 7 AM">
+                            6 AM - 7 AM
+                        </option>
+                        <option value="7 AM - 8 AM">
+                            7 AM - 8 AM
+                        </option>
+                        <option value="8 AM - 9 AM">
+                            8 AM - 9 AM
+                        </option>
+                        <option value="9 AM - 10 AM">
+                            9 AM - 10 AM
+                        </option>
+                        <option value="10 AM - 11 AM">
+                            10 AM - 11 AM
+                        </option>
+                        <option value="11 AM - 12 PM">
+                            11 AM - 12 PM
+                        </option>
+                        <option value="12 PM - 1 PM">
+                            12 PM - 1 PM
+                        </option>
+                        <option value="1 PM - 2 PM">
+                            1 PM - 2 PM
+                        </option>
+                        <option value="2 PM - 3 PM">
+                            2 PM - 3 PM
+                        </option>
+                        <option value="3 PM - 4 PM">
+                            3 PM - 4 PM
+                        </option>
+                        <option value="4 PM - 5 PM">
+                            4 PM - 5 PM
+                        </option>
+                        <option value="5 PM - 6 PM">
+                            5 PM - 6 PM
+                        </option>
+                        <option value="6 PM - 7 PM">
+                            6 PM - 7 PM
+                        </option>
+                        <option value="7 PM - 8 PM">
+                            7 PM - 8 PM
+                        </option>
+                        <option value="8 PM - 9 PM">
+                            8 PM - 9 PM
+                        </option>
+                        <option value="9 PM - 10 PM">
+                            9 PM - 10 PM
+                        </option>
+                        <option value="10 PM - 11 PM">
+                            10 PM - 11 PM
+                        </option>
+                    </select>
+                </div>
+
+                <div class="ticket-types-container">
+
+                    <div class="ticket chat-ticket">
+                        <div class="ticket-title">Chat</div>
+                        <div id="chat-count" class="ticket-count">0</div>
+                        <div class="buttons-container">
+                            <div id="chat-minus-button" class="button minus-button">-</div>
+                            <div id="chat-plus-button" class="button plus-button">+</div>
+                        </div>
+                    </div>
+
+                    <div class="ticket phone-ticket">
+                        <div class="ticket-title">Phone</div>
+                        <div id="phone-count" class="ticket-count">0</div>
+                        <div class="buttons-container">
+                            <div id="phone-minus-button" class="button minus-button">-</div>
+                            <div id="phone-plus-button" class="button plus-button">+</div>
+                        </div>
+                    </div>
+
+                    <div class="ticket web-ticket">
+                        <div class="ticket-title">Web</div>
+                        <div id="web-count" class="ticket-count">0</div>
+                        <div class="buttons-container">
+                            <div id="web-minus-button" class="button minus-button">-</div>
+                            <div id="web-plus-button" class="button plus-button">+</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="uow-summary-info-container">
+
+            <div id="total-uow">Total UoW: <b>0</b> </div>
+
+            <div id="uow-value-info">
+                Chat = 0.62 <span>UoW</span> &nbsp; Phone = 1 <span>UoW</span> &nbsp; Web = 1 <span>UoW</span>
+            </div>
+
+            <div id="summary-button">Summary</div>
+
+        </div>
+
+        <div id="uow-per-hour-info-container">
+            <!-- <div id="uow-per-hour-total">Total UoW: <b>0</b> </div> -->
+            <div id="uow-per-hour-info"></div>
+            <div id="uow-per-hour-info-2"></div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="test.js"></script>
+</body>
+
+</html>
