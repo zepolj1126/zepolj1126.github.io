@@ -41,6 +41,10 @@
     text-align: center;
 }
 
+#time-elements-container>div {
+    display: inline-block;
+}
+
 .time {
     text-align: center;
     font-size: 20px;
