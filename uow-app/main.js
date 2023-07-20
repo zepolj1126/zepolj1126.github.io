@@ -41,6 +41,9 @@ let workData = {
     "10 PM - 11 PM": { chat: 0, phone: 0, web: 0 }
 };
 
+let timeDownButton = document.getElementById("time-down-button");
+let timeUpButton = document.getElementById("time-up-button");
+
 // Get the select element
 let timeSelect = document.querySelector('.time select');
 
@@ -194,23 +197,6 @@ function updateState() {
         }
     }
 
-    // for (let i = 0; i < timeSelect.length; i++) {
-    //     if (i <= 11) {
-    //         if (workData[timeSelect[i].value].chat > 0 || workData[timeSelect[i].value].phone > 0 || workData[timeSelect[i].value].web > 0) {
-    //             UoWperHourInfo.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
-    //         } else {
-    //             UoWperHourInfo.innerHTML += "<div>" + timeSelect[i].value + " -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
-    //         }
-    //     } else {
-    //         if (workData[timeSelect[i].value].chat > 0 || workData[timeSelect[i].value].phone > 0 || workData[timeSelect[i].value].web > 0) {
-    //             UoWperHourInfo2.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
-    //         } else {
-    //             UoWperHourInfo2.innerHTML += "<div>" + timeSelect[i].value + " -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
-    //         }
-    //     }
-    // }
-
-
     localStorage.setItem('workData', JSON.stringify(workData));
 }
 
@@ -239,43 +225,6 @@ for (let i = 0; i < minusBtn.length; i++) {
 
         updateState();
 
-        // if (workData[timeSelectHour].chat < 1) {
-        //     chatMinusBtn.disabled = true;
-        // } else {
-        //     chatMinusBtn.disabled = false;
-        // }
-
-        // if (workData[timeSelectHour].phone < 1) {
-        //     phoneMinusBtn.disabled = true;
-        // } else {
-        //     phoneMinusBtn.disabled = false;
-        // }
-
-        // if (workData[timeSelectHour].web < 1) {
-        //     webMinusBtn.disabled = true;
-        // } else {
-        //     webMinusBtn.disabled = false;
-        // }
-
-        // chatSum = 0;
-        // phoneSum = 0;
-        // webSum = 0;
-
-        // for (let i = 0; i < timeSelect.length; i++) {
-        //     chatSum += workData[timeSelect[i].value].chat;
-        //     phoneSum += workData[timeSelect[i].value].phone;
-        //     webSum += workData[timeSelect[i].value].web;
-        // }
-
-        // totalSum = ((chatSum * 0.62) + phoneSum + webSum).toFixed(2);
-
-        // totalUoW.innerHTML = "Total: " + "<span style='font-weight:bold'>" + totalSum + "</span>";
-
-        // console.log("Total: " + totalSum);
-        // console.log("Chat minus button disabled = true? " + Boolean(chatMinusBtn.disabled === true));
-        // console.log("Phone minus button disabled = true? " + Boolean(phoneMinusBtn.disabled === true));
-        // console.log("Web minus button disabled = true? " + Boolean(webMinusBtn.disabled === true));
-
     });
 
 }
@@ -303,43 +252,6 @@ for (let i = 0; i < plusBtn.length; i++) {
 
         updateState();
 
-        // if (workData[timeSelectHour].chat > 0) {
-        //     chatMinusBtn.disabled = false;
-        // } else {
-        //     chatMinusBtn.disabled = true;
-        // }
-
-        // if (workData[timeSelectHour].phone > 0) {
-        //     phoneMinusBtn.disabled = false;
-        // } else {
-        //     phoneMinusBtn.disabled = true;
-        // }
-
-        // if (workData[timeSelectHour].web > 0) {
-        //     webMinusBtn.disabled = false;
-        // } else {
-        //     webMinusBtn.disabled = true;
-        // }
-
-        // chatSum = 0;
-        // phoneSum = 0;
-        // webSum = 0;
-
-        // for (let i = 0; i < timeSelect.length; i++) {
-        //     chatSum += workData[timeSelect[i].value].chat;
-        //     phoneSum += workData[timeSelect[i].value].phone;
-        //     webSum += workData[timeSelect[i].value].web;
-        // }
-
-        // totalSum = ((chatSum * 0.62) + phoneSum + webSum).toFixed(2);
-
-        // totalUoW.innerHTML = "Total: " + "<span style='font-weight:bold'>" + totalSum + "</span>";
-
-        // console.log("Total: " + totalSum);
-        // console.log("Chat minus button disabled = true? " + Boolean(chatMinusBtn.disabled === true));
-        // console.log("Phone minus button disabled = true? " + Boolean(phoneMinusBtn.disabled === true));
-        // console.log("Web minus button disabled = true? " + Boolean(webMinusBtn.disabled === true));
-
     });
 }
 
@@ -363,44 +275,6 @@ timeSelect.addEventListener('change', function () {
     webCount.innerHTML = workData[timeSelectHour].web;
 
     updateState();
-
-    // if (workData[timeSelectHour].chat < 1) {
-    //     chatMinusBtn.disabled = true;
-    // } else {
-    //     chatMinusBtn.disabled = false;
-    // }
-
-    // if (workData[timeSelectHour].phone < 1) {
-    //     phoneMinusBtn.disabled = true;
-    // } else {
-    //     phoneMinusBtn.disabled = false;
-    // }
-
-    // if (workData[timeSelectHour].web < 1) {
-    //     webMinusBtn.disabled = true;
-    // } else {
-    //     webMinusBtn.disabled = false;
-    // }
-
-    // chatSum = 0;
-    // phoneSum = 0;
-    // webSum = 0;
-
-    // for (let i = 0; i < timeSelect.length; i++) {
-    //     chatSum += workData[timeSelect[i].value].chat;
-    //     phoneSum += workData[timeSelect[i].value].phone;
-    //     webSum += workData[timeSelect[i].value].web;
-    // }
-
-    // totalSum = ((chatSum * 0.62) + phoneSum + webSum).toFixed(2);
-
-    // totalUoW.innerHTML = "Total: " + "<span style='font-weight:bold'>" + totalSum + "</span>";
-
-    // console.log("Total: " + totalSum);
-    // console.log("Chat minus button disabled = true? " + Boolean(chatMinusBtn.disabled === true));
-    // console.log("Phone minus button disabled = true? " + Boolean(phoneMinusBtn.disabled === true));
-    // console.log("Web minus button disabled = true? " + Boolean(webMinusBtn.disabled === true));
-
 
 });
 
@@ -478,4 +352,49 @@ summaryButton.addEventListener("click", function () {
     }
 
 });
+
+
+let timeSelectHourIndex = 9; // Set the initial index of the selected hour
+
+timeDownButton.addEventListener("click", function () {
+
+    if (timeSelectHourIndex > 0) {
+
+        timeSelectHourIndex--; // Decrement the index
+
+        timeSelect.value = timeSelect[timeSelectHourIndex].value; // Update the value of the select element
+    }
+
+    timeSelectHour = timeSelect.value;
+
+    chatCount.innerHTML = workData[timeSelectHour].chat;
+    phoneCount.innerHTML = workData[timeSelectHour].phone;
+    webCount.innerHTML = workData[timeSelectHour].web;
+
+    updateState();
+});
+
+
+timeUpButton.addEventListener("click", function () {
+
+    if (timeSelectHourIndex >= 0 && timeSelectHourIndex < timeSelect.options.length - 1) {
+
+        timeSelectHourIndex++; // Increment the index
+
+        timeSelect.value = timeSelect[timeSelectHourIndex].value; // Update the value of the select element
+    }
+
+    timeSelectHour = timeSelect.value;
+
+    chatCount.innerHTML = workData[timeSelectHour].chat;
+    phoneCount.innerHTML = workData[timeSelectHour].phone;
+    webCount.innerHTML = workData[timeSelectHour].web;
+
+    updateState();
+});
+
+console.log("Time select index 0 value: " + timeSelect.options[0].text);
+console.log("Time select index 0 value: " + timeSelect[0].value);
+
+
 
