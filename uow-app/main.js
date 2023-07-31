@@ -55,6 +55,12 @@ let timeSelectHour = timeSelect.value;
 
 let totalUoW = document.getElementById("total-uow");
 
+let UoWperHourInfoContainer = document.getElementById("uow-per-hour-info-container");
+let UoWperHourTotal = document.getElementById("uow-per-hour-total");
+let UoWperHourInfo = document.getElementById("uow-per-hour-info");
+let UoWperHourInfo2 = document.getElementById("uow-per-hour-info-2");
+let summaryButton = document.getElementById("summary-button");
+
 let chatSum = 0;
 let phoneSum = 0;
 let webSum = 0;
@@ -63,11 +69,7 @@ chatCount.innerHTML = workData[timeSelectHour].chat;
 phoneCount.innerHTML = workData[timeSelectHour].phone;
 webCount.innerHTML = workData[timeSelectHour].web;
 
-let UoWperHourInfoContainer = document.getElementById("uow-per-hour-info-container");
-let UoWperHourTotal = document.getElementById("uow-per-hour-total");
-let UoWperHourInfo = document.getElementById("uow-per-hour-info");
-let UoWperHourInfo2 = document.getElementById("uow-per-hour-info-2");
-let summaryButton = document.getElementById("summary-button");
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 for (let i = 0; i < timeSelect.length; i++) {
 
@@ -79,31 +81,22 @@ for (let i = 0; i < timeSelect.length; i++) {
     console.log("Phone: " + timeSelect[i].value + " = " + workData[timeSelect[i].value].phone);
     console.log("Web: " + timeSelect[i].value + " = " + workData[timeSelect[i].value].web);
 
-
-    // if (workData[timeSelect[i].value].chat > 0) {
-    //     UoWperHourChat.innerHTML += "<div>" + "Chat: " + timeSelect[i].value + " = " + workData[timeSelect[i].value].chat + " UoW" + "</div>";
-    // }
-    // if (workData[timeSelect[i].value].phone > 0) {
-    //     UoWperHourPhone.innerHTML += "<div>" + "Phone: " + timeSelect[i].value + " = " + workData[timeSelect[i].value].phone + " Uow" + "</div>";
-    // }
-    // if (workData[timeSelect[i].value].web > 0) {
-    //     UoWperHourWeb.innerHTML += "<div>" + "Web: " + timeSelect[i].value + " = " + workData[timeSelect[i].value].web + " UoW" + "</div>";
-    // }
-
     UoWperHourInfo.innerHTML = "";
     UoWperHourInfo2.innerHTML = "";
 
     for (let i = 0; i < timeSelect.length; i++) {
         if (i <= 11) {
-            UoWperHourInfo.innerHTML += "<div>" + timeSelect[i].value + " -- " + " Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+            UoWperHourInfo.innerHTML += "<div>" + timeSelect[i].value + " -- " + " Chat: " + workData[timeSelect[i].value].chat + " Phone: " + workData[timeSelect[i].value].phone + " Web: " + workData[timeSelect[i].value].web + "</div>";
         }
 
         if (i > 11) {
-            UoWperHourInfo2.innerHTML += "<div>" + timeSelect[i].value + " -- " + " Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+            UoWperHourInfo2.innerHTML += "<div>" + timeSelect[i].value + " -- " + " Chat: " + workData[timeSelect[i].value].chat + " Phone: " + workData[timeSelect[i].value].phone + " Web: " + workData[timeSelect[i].value].web + "</div>";
         }
     }
 
 }
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 let totalSum = ((chatSum * 0.62) + phoneSum + webSum).toFixed(2);
 
@@ -132,6 +125,7 @@ if (workData[timeSelectHour].web > 0) {
     webMinusBtn.disabled = true;
 }
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 function updateState() {
 
@@ -148,8 +142,6 @@ function updateState() {
     totalSum = ((chatSum * 0.62) + phoneSum + webSum).toFixed(2);
 
     totalUoW.innerHTML = "Total UoW: " + "<span style='font-weight:bold'>" + totalSum + "</span>";
-
-    //UoWperHourTotal.innerHTML = "Total UoW: " + "<span style='font-weight:bold'>" + totalSum + "</span>";
 
     // Enable/disable buttons
     if (workData[timeSelectHour].chat <= 0) {
@@ -182,17 +174,18 @@ function updateState() {
 
         if (i <= 11) {
             if (workData[timeSelect[i].value].chat > 0 || workData[timeSelect[i].value].phone > 0 || workData[timeSelect[i].value].web > 0) {
-                UoWperHourInfo.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+                UoWperHourInfo.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].chat + "</span>" + " Phone: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].phone + "</span>" + " Web: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].web + "</span>" + "</div>";
+
             } else {
-                UoWperHourInfo.innerHTML += "<div>" + timeSelect[i].value + " -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+                UoWperHourInfo.innerHTML += "<div>" + timeSelect[i].value + " -- Chat: " + workData[timeSelect[i].value].chat + " Phone: " + workData[timeSelect[i].value].phone + " Web: " + workData[timeSelect[i].value].web + "</div>";
             }
         }
 
         if (i > 11) {
             if (workData[timeSelect[i].value].chat > 0 || workData[timeSelect[i].value].phone > 0 || workData[timeSelect[i].value].web > 0) {
-                UoWperHourInfo2.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+                UoWperHourInfo2.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].chat + "</span>" + " Phone: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].phone + "</span>" + " Web: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].web + "</span>" + "</div>";
             } else {
-                UoWperHourInfo2.innerHTML += "<div>" + timeSelect[i].value + " -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+                UoWperHourInfo2.innerHTML += "<div>" + timeSelect[i].value + " -- Chat: " + workData[timeSelect[i].value].chat + " Phone: " + workData[timeSelect[i].value].phone + " Web: " + workData[timeSelect[i].value].web + "</div>";
             }
         }
     }
@@ -201,6 +194,20 @@ function updateState() {
 }
 
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+let progressDIVcontainer = document.getElementById("progress-div-container");
+let goalMetmessage = document.getElementById("goal-met-message");
+let progressDIV = document.getElementById("progress-div");
+let progressDIVcontainerWidth = window.getComputedStyle(progressDIVcontainer).getPropertyValue("width");
+let progressDIVcontainerWidthNumber = parseInt(progressDIVcontainerWidth, 10);
+
+let UoWdailyGoal = 14;
+
+let progressWidth = totalSum * (progressDIVcontainerWidthNumber / UoWdailyGoal) + "px";
+progressDIV.style.width = progressWidth;
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 for (let i = 0; i < minusBtn.length; i++) {
 
@@ -225,9 +232,21 @@ for (let i = 0; i < minusBtn.length; i++) {
 
         updateState();
 
+        if (totalSum !== 0) {
+            progressWidth = totalSum * (progressDIVcontainerWidthNumber / UoWdailyGoal) + "px";
+
+            progressDIV.style.width = progressWidth;
+        }
+
+        if (totalSum < UoWdailyGoal) {
+            goalMetmessage.style.opacity = 0;
+        }
+
     });
 
 }
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 for (let i = 0; i < plusBtn.length; i++) {
 
@@ -252,15 +271,25 @@ for (let i = 0; i < plusBtn.length; i++) {
 
         updateState();
 
+        progressWidth = totalSum * (progressDIVcontainerWidthNumber / UoWdailyGoal) + "px";
+
+        progressDIV.style.width = progressWidth;
+
+        if (totalSum >= UoWdailyGoal) {
+            goalMetmessage.style.opacity = 1;
+        }
+
     });
 }
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 
 console.log("Chat minus button disabled = true? " + Boolean(chatMinusBtn.disabled === true));
 console.log("Phone minus button disabled = true? " + Boolean(phoneMinusBtn.disabled === true));
 console.log("Web minus button disabled = true? " + Boolean(webMinusBtn.disabled === true));
 
-
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 timeSelect.addEventListener('change', function () {
 
@@ -278,6 +307,7 @@ timeSelect.addEventListener('change', function () {
 
 });
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 
 
@@ -319,6 +349,8 @@ timeSelect.addEventListener('change', function () {
 
 // });
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 summaryButton.addEventListener("click", function () {
 
     if (UoWperHourInfoContainer.style.display === "flex") {
@@ -332,26 +364,42 @@ summaryButton.addEventListener("click", function () {
     UoWperHourInfo.innerHTML = "";
     UoWperHourInfo2.innerHTML = "";
 
+
+
     for (let i = 0; i < timeSelect.length; i++) {
 
         if (i <= 11) {
+
             if (workData[timeSelect[i].value].chat > 0 || workData[timeSelect[i].value].phone > 0 || workData[timeSelect[i].value].web > 0) {
-                UoWperHourInfo.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+                UoWperHourInfo.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].chat + "</span>" + " Phone: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].phone + "</span>" + " Web: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].web + "</span>" + "</div>";
             } else {
-                UoWperHourInfo.innerHTML += "<div>" + timeSelect[i].value + " -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+                UoWperHourInfo.innerHTML += "<div>" + timeSelect[i].value + " -- Chat: " + workData[timeSelect[i].value].chat + " Phone: " + workData[timeSelect[i].value].phone + " Web: " + workData[timeSelect[i].value].web + "</div>";
             }
+
+            // if (workData[timeSelect[i].value].chat > 0) {
+            //     UoWperHourInfo.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].chat + "</span>" + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+            // } else if (workData[timeSelect[i].value].phone > 0) {
+            //     UoWperHourInfo.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat " + workData[timeSelect[i].value].chat + " Phone " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].phone + "</span>" + " Web " + workData[timeSelect[i].value].web + "</div>";
+            // } else if (workData[timeSelect[i].value].web > 0) {
+            //     UoWperHourInfo.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].web + "</span>" + "</div>";
+            // } else {
+            //     UoWperHourInfo.innerHTML += "<div>" + timeSelect[i].value + " -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+            // }
+
         }
 
         if (i > 11) {
             if (workData[timeSelect[i].value].chat > 0 || workData[timeSelect[i].value].phone > 0 || workData[timeSelect[i].value].web > 0) {
-                UoWperHourInfo2.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+                UoWperHourInfo2.innerHTML += "<div><span style='padding:3px;background-color:yellow'>" + timeSelect[i].value + "</span> -- Chat: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].chat + "</span>" + " Phone: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].phone + "</span>" + " Web: " + "<span style='padding:3px;background-color:yellow'>" + workData[timeSelect[i].value].web + "</span>" + "</div>";
             } else {
-                UoWperHourInfo2.innerHTML += "<div>" + timeSelect[i].value + " -- Chat " + workData[timeSelect[i].value].chat + " Phone " + workData[timeSelect[i].value].phone + " Web " + workData[timeSelect[i].value].web + "</div>";
+                UoWperHourInfo2.innerHTML += "<div>" + timeSelect[i].value + " -- Chat: " + workData[timeSelect[i].value].chat + " Phone: " + workData[timeSelect[i].value].phone + " Web: " + workData[timeSelect[i].value].web + "</div>";
             }
         }
     }
 
 });
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 
 let timeSelectHourIndex = 9; // Set the initial index of the selected hour
@@ -374,6 +422,7 @@ timeDownButton.addEventListener("click", function () {
     updateState();
 });
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 timeUpButton.addEventListener("click", function () {
 
@@ -396,5 +445,48 @@ timeUpButton.addEventListener("click", function () {
 console.log("Time select index 0 value: " + timeSelect.options[0].text);
 console.log("Time select index 0 value: " + timeSelect[0].value);
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
+let clearDataButton = document.getElementById("clear-data-button");
 
+clearDataButton.addEventListener("click", function () {
+
+    workData = {
+        "12 AM - 1 AM": { chat: 0, phone: 0, web: 0 },
+        "1 AM - 2 AM": { chat: 0, phone: 0, web: 0 },
+        "2 AM - 3 AM": { chat: 0, phone: 0, web: 0 },
+        "3 AM - 4 AM": { chat: 0, phone: 0, web: 0 },
+        "4 AM - 5 AM": { chat: 0, phone: 0, web: 0 },
+        "5 AM - 6 AM": { chat: 0, phone: 0, web: 0 },
+        "6 AM - 7 AM": { chat: 0, phone: 0, web: 0 },
+        "7 AM - 8 AM": { chat: 0, phone: 0, web: 0 },
+        "8 AM - 9 AM": { chat: 0, phone: 0, web: 0 },
+        "9 AM - 10 AM": { chat: 0, phone: 0, web: 0 },
+        "10 AM - 11 AM": { chat: 0, phone: 0, web: 0 },
+        "11 AM - 12 PM": { chat: 0, phone: 0, web: 0 },
+        "12 PM - 1 PM": { chat: 0, phone: 0, web: 0 },
+        "1 PM - 2 PM": { chat: 0, phone: 0, web: 0 },
+        "2 PM - 3 PM": { chat: 0, phone: 0, web: 0 },
+        "3 PM - 4 PM": { chat: 0, phone: 0, web: 0 },
+        "4 PM - 5 PM": { chat: 0, phone: 0, web: 0 },
+        "5 PM - 6 PM": { chat: 0, phone: 0, web: 0 },
+        "6 PM - 7 PM": { chat: 0, phone: 0, web: 0 },
+        "7 PM - 8 PM": { chat: 0, phone: 0, web: 0 },
+        "8 PM - 9 PM": { chat: 0, phone: 0, web: 0 },
+        "9 PM - 10 PM": { chat: 0, phone: 0, web: 0 },
+        "10 PM - 11 PM": { chat: 0, phone: 0, web: 0 }
+    };
+
+    chatCount.innerHTML = "0";
+    phoneCount.innerHTML = "0";
+    webCount.innerHTML = "0";
+
+    updateState();
+
+    progressWidth = totalSum * (progressDIVcontainerWidthNumber / UoWdailyGoal) + "px";
+
+    progressDIV.style.width = progressWidth;
+
+    goalMetmessage.style.opacity = 0;
+
+});
