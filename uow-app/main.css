@@ -91,7 +91,7 @@
     margin-left: 5px;
     margin-right: 5px;
     padding: 5px;
-    width: 50px;
+    min-width: 50px;
     text-align: center;
     border: solid black 2px;
     cursor: pointer;
@@ -140,9 +140,29 @@
     cursor: pointer;
     font-size: 18px;
     border-radius: 10px;
+
+    display: inline-block;
+    margin: 5px;
 }
 
 #summary-button:hover {
+    background-color: black;
+    color: white;
+}
+
+#clear-data-button {
+    border: black solid 2px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px;
+
+    display: inline-block;
+    margin: 5px;
+}
+
+#clear-data-button:hover {
     background-color: black;
     color: white;
 }
@@ -179,4 +199,63 @@
 #uow-per-hour-info-container>#uow-per-hour-info,
 #uow-per-hour-info-2 {
     text-align: center;
+}
+
+
+
+#progress-div-container {
+    width: 600px;
+    border: solid black 2px;
+    box-sizing: content-box;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+
+    position: relative;
+}
+
+#goal-met-message {
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 22px;
+    opacity: 0;
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .7s;
+}
+
+#progress-div {
+    width: 0;
+    height: 50px;
+    background-color: greenyellow;
+    transition: width .7s;
+}
+
+.animate-character {
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg,
+            black 0%,
+            red 29%,
+            red 67%,
+            black 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    /* text-fill-color: transparent; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3s linear infinite;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
 }
