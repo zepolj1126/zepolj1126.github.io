@@ -185,7 +185,6 @@
     align-items: center;
     height: auto;
     width: 100%;
-    text-align: center;
     padding: 30px;
     background-color: white;
     display: none;
@@ -199,19 +198,14 @@
     align-items: center; */
 }
 
-#uow-per-hour-total {
-    margin-right: 10px;
-}
-
 #uow-per-hour-info {
     margin-right: 40px;
 }
 
-#uow-per-hour-info-container>#uow-per-hour-info,
-#uow-per-hour-info-2 {
-    text-align: center;
+#uow-per-hour-info>div,
+#uow-per-hour-info-2>div {
+    margin-bottom: 10px;
 }
-
 
 
 #progress-div-container {
